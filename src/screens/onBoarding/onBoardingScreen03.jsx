@@ -2,9 +2,9 @@ import React from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import GetStartedButton from '../../components/getStartedButton';
 import PropTypes from 'prop-types';
-import TopImg from '../../assets/background/Ellipse153.png';
-import DrImage from '../../assets/images/Ellipse154(2).png';
-import LastImg from '../../assets/background/Ellipse143.png';
+import topImg from '../../assets/background/Ellipse153.png';
+import drImage from '../../assets/images/Ellipse154(2).png';
+import lastImg from '../../assets/background/Ellipse143.png';
 const OnBoardingScreen03 = ({navigation}) => {
   const handleButton = () => {
     navigation.navigate('bottomTabBar');
@@ -14,16 +14,10 @@ const OnBoardingScreen03 = ({navigation}) => {
     <ScrollView>
       <View>
         <View>
-          <Image
-            style={styles.fisrtImage}
-            source={TopImg}
-          />
+          <Image style={styles.fisrtImage} source={topImg} />
         </View>
         <View>
-          <Image
-            style={styles.DrImg}
-            source={DrImage}
-          />
+          <Image style={styles.drImg} source={drImage} />
         </View>
         <View style={styles.textBox}>
           <View style={styles.text}>
@@ -39,28 +33,27 @@ const OnBoardingScreen03 = ({navigation}) => {
       </View>
 
       <GetStartedButton handleButton={handleButton} />
-      <Text onPress={() => navigation.navigate('bottomTabBar')} style={styles.skip}>
+      <Text
+        onPress={() => navigation.navigate('bottomTabBar')}
+        style={styles.skip}>
         Skip
       </Text>
-      <Image
-        style={styles.bg}
-        source={LastImg}
-      />
+      <Image style={styles.bg} source={lastImg} />
     </ScrollView>
   );
 };
 
 OnBoardingScreen03.propTypes = {
   navigation: PropTypes.shape({
-    navigate: PropTypes.func.isRequired 
-  }).isRequired
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
 };
 const styles = StyleSheet.create({
   fisrtImage: {
     height: 300,
     width: 250,
   },
-  DrImg: {
+  drImg: {
     width: 336,
     height: 336,
     marginTop: -220,

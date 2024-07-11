@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import GetStartedButton from '../../components/getStartedButton';
 import TopImg from '../../assets/background/Ellipse153(1).png';
 import DrImage from '../../assets/images/Ellipse154(1).png';
@@ -14,16 +14,10 @@ const OnBoardingScreen02 = ({navigation}) => {
     <ScrollView>
       <View>
         <View>
-          <Image
-            style={styles.fisrtImage}
-            source={TopImg}
-          />
+          <Image style={styles.fisrtImage} source={TopImg} />
         </View>
         <View>
-          <Image
-            style={styles.DrImg}
-            source={DrImage}
-          />
+          <Image style={styles.DrImg} source={DrImage} />
         </View>
         <View style={styles.textBox}>
           <View style={styles.text}>
@@ -39,21 +33,20 @@ const OnBoardingScreen02 = ({navigation}) => {
       </View>
 
       <GetStartedButton handleButton={handleButton} />
-      <Text onPress={() => navigation.navigate('bottomTabBar')} style={styles.skip}>
+      <Text
+        onPress={() => navigation.navigate('bottomTabBar')}
+        style={styles.skip}>
         Skip
       </Text>
-      <Image
-        style={styles.bg}
-        source={LastImg}
-      />
+      <Image style={styles.bg} source={LastImg} />
     </ScrollView>
   );
 };
 
 OnBoardingScreen02.propTypes = {
   navigation: PropTypes.shape({
-    navigate: PropTypes.func.isRequired 
-  }).isRequired
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -88,7 +81,6 @@ const styles = StyleSheet.create({
     fontFamily: '../assets/fonts/Rubik-VariableFont_wght.ttf',
   },
   textContaint: {
-
     width: 274,
     height: 100,
 

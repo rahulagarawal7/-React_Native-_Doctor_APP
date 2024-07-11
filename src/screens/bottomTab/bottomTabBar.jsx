@@ -8,7 +8,7 @@ import homeIcon from '../../../src/assets/icons/Group.png';
 import bookIcon from '../../../src/assets/icons/Group(2).png';
 import findIcon from '../../../src/assets/icons/Group(1).png';
 import chatIcon from '../../../src/assets/icons/Vector.png';
-import {Image} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,12 +16,7 @@ const BottomTab = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarStyle: {
-          height: 74,
-          backgroundColor: '#FFFFFF',
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20,
-        },
+        tabBarStyle: styles.tabNavigatorStyle,
       }}
       initialRouteName="home">
       <Tab.Screen
@@ -46,7 +41,7 @@ const BottomTab = () => {
           headerShown: false,
         }}
       />
-        <Tab.Screen
+      <Tab.Screen
         name="book"
         component={Book}
         options={{
@@ -68,9 +63,15 @@ const BottomTab = () => {
           headerShown: false,
         }}
       />
-    
     </Tab.Navigator>
   );
 };
-
+const styles = StyleSheet.create({
+  tabNavigatorStyle: {
+    height: 74,
+    backgroundColor: '#FFFFFF',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+  },
+});
 export default BottomTab;

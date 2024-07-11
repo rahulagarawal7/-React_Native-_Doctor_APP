@@ -1,39 +1,28 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types'; 
-import {
-  Image,
-  ImageBackground,
-  StyleSheet,
-  View,
-} from 'react-native';
-
+import React, {useEffect} from 'react';
+import PropTypes from 'prop-types';
+import {Image, ImageBackground, StyleSheet, View} from 'react-native';
 import bgImg from '../assets/background/bg.png';
 import logo from '../assets/Logo/Logo.png';
 
 const SplashScreen = ({navigation}) => {
-
   useEffect(() => {
-    setTimeout(()=>{
-      navigation.navigate('OnBoardingScreen01')
-    },2000)
-  
+    setTimeout(() => {
+      navigation.navigate('OnBoardingScreen01');
+    }, 2000);
   }, []);
 
-
   return (
-  
-      <ImageBackground source={bgImg} style={styles.bgImg}>
-        <View style={styles.logoStyles}>
-          <Image style={styles.logo} source={logo} />
-        </View>
-      </ImageBackground>
- 
+    <ImageBackground source={bgImg} style={styles.bgImg}>
+      <View style={styles.logoStyles}>
+        <Image style={styles.logo} source={logo} />
+      </View>
+    </ImageBackground>
   );
-}
+};
 SplashScreen.propTypes = {
   navigation: PropTypes.shape({
-    navigate: PropTypes.func.isRequired 
-  }).isRequired
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
 };
 const styles = StyleSheet.create({
   bgImg: {

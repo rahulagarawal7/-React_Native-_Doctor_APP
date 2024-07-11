@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   Image,
   SafeAreaView,
@@ -27,7 +26,6 @@ const Home = () => {
           </View>
           <Image style={styles.userImgStyle} source={UserImg} />
         </View>
-     
       </SafeAreaView>
     </ScrollView>
   );
