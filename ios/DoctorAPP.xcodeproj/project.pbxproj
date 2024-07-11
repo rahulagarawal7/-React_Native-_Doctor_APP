@@ -13,8 +13,10 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		21AE8C5F03382A061B7C3734 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A8EC57D429A8B7615253F430 /* PrivacyInfo.xcprivacy */; };
+		47406A64F5684438B5173B5A /* Rubik-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9424331559F474CB3288492 /* Rubik-Italic-VariableFont_wght.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-DoctorAPP-DoctorAPPTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-DoctorAPP-DoctorAPPTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A5959F8B83564C0397574AC6 /* Rubik-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 658CAA2267BF42C3B7B21A94 /* Rubik-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,9 +45,11 @@
 		5709B34CF0A7D63546082F79 /* Pods-DoctorAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorAPP.release.xcconfig"; path = "Target Support Files/Pods-DoctorAPP/Pods-DoctorAPP.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-DoctorAPP-DoctorAPPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorAPP-DoctorAPPTests.debug.xcconfig"; path = "Target Support Files/Pods-DoctorAPP-DoctorAPPTests/Pods-DoctorAPP-DoctorAPPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-DoctorAPP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DoctorAPP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		658CAA2267BF42C3B7B21A94 /* Rubik-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-VariableFont_wght.ttf"; path = "../src/assets/fonts/Rubik-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DoctorAPP/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-DoctorAPP-DoctorAPPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorAPP-DoctorAPPTests.release.xcconfig"; path = "Target Support Files/Pods-DoctorAPP-DoctorAPPTests/Pods-DoctorAPP-DoctorAPPTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8EC57D429A8B7615253F430 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = DoctorAPP/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		A9424331559F474CB3288492 /* Rubik-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Italic-VariableFont_wght.ttf"; path = "../src/assets/fonts/Rubik-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -127,6 +131,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				9B81E6A7164D45FB89F69856 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -140,6 +145,16 @@
 				00E356EE1AD99517003FC87E /* DoctorAPPTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9B81E6A7164D45FB89F69856 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A9424331559F474CB3288492 /* Rubik-Italic-VariableFont_wght.ttf */,
+				658CAA2267BF42C3B7B21A94 /* Rubik-VariableFont_wght.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -249,6 +264,8 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				21AE8C5F03382A061B7C3734 /* PrivacyInfo.xcprivacy in Resources */,
+				47406A64F5684438B5173B5A /* Rubik-Italic-VariableFont_wght.ttf in Resources */,
+				A5959F8B83564C0397574AC6 /* Rubik-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
