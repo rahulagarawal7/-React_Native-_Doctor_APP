@@ -14,7 +14,7 @@ const OnBoardingScreen02 = ({navigation}) => {
     <ScrollView>
       <View>
         <View>
-          <Image style={styles.fisrtImage} source={TopImg} />
+          <Image style={styles.firstImage} source={TopImg} />
         </View>
         <View>
           <Image style={styles.DrImg} source={DrImage} />
@@ -31,7 +31,6 @@ const OnBoardingScreen02 = ({navigation}) => {
           </View>
         </View>
       </View>
-
       <GetStartedButton handleButton={handleButton} />
       <Text
         onPress={() => navigation.navigate('bottomTabBar')}
@@ -50,7 +49,7 @@ OnBoardingScreen02.propTypes = {
 };
 
 const styles = StyleSheet.create({
-  fisrtImage: {
+  firstImage: {
     height: 342,
     width: 342,
     left: 175,

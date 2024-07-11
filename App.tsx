@@ -14,7 +14,7 @@ function App(): React.JSX.Element {
   return (
     <SafeAreaView style={{flex: 1}}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="splachScreen">
+        <Stack.Navigator initialRouteName="splashScreen">
           <Stack.Screen
             options={{headerShown: false}}
             name="OnBoardingScreen01"
@@ -32,7 +32,7 @@ function App(): React.JSX.Element {
           />
           <Stack.Screen
             options={{headerShown: false}}
-            name="splachScreen"
+            name="splashScreen"
             component={SplashScreen}
           />
           <Stack.Screen

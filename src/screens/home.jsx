@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 
 import UserImg from '../assets/images/Ellipse26.png';
+
+import TypesOfDoctorCard from '../components/typesOfDoctorsCard';
 const Home = () => {
   return (
     <ScrollView>
@@ -25,6 +27,9 @@ const Home = () => {
             <Text style={styles.headingTextStyle}>Find Your Doctor</Text>
           </View>
           <Image style={styles.userImgStyle} source={UserImg} />
+        </View>
+        <View style={styles.typesOfDoctorBox}>
+          <TypesOfDoctorCard />
         </View>
       </SafeAreaView>
     </ScrollView>
@@ -59,6 +64,12 @@ const styles = StyleSheet.create({
   userImgStyle: {
     height: 70,
     width: 70,
+  },
+  typesOfDoctorBox: {
+    margin: 19,
+    height: 209,
+    width: 379.48,
+    flex: 1,
   },
 });
 export default Home;
