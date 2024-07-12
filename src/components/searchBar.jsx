@@ -2,12 +2,13 @@ import React from 'react';
 import {Image, StyleSheet, TextInput, View} from 'react-native';
 import searchImg from '../../src/assets/Logo/search.png';
 import crossImg from '../../src/assets/Logo/cross.png';
+import color from '../commons/colors';
+
 const SearchBar = () => {
   return (
     <View style={styles.barBox}>
       <Image style={styles.searchImgStyle} source={searchImg} />
       <TextInput
-        placeholderTextColor="#677294"
         placeholder="Search..."
         keyboardType="text"
         style={styles.inputTextStyle}
@@ -19,11 +20,11 @@ const SearchBar = () => {
 const styles = StyleSheet.create({
   barBox: {
     position: 'absolute',
-    marginTop: -20,
+    top: -30,
     height: 54,
     width: 335,
     borderRadius: 6,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: color.commonTextColor,
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',

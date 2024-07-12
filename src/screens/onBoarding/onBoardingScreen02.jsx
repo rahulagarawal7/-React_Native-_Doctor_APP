@@ -5,6 +5,7 @@ import GetStartedButton from '../../components/getStartedButton';
 import TopImg from '../../assets/background/Ellipse153(1).png';
 import DrImage from '../../assets/images/Ellipse154(1).png';
 import LastImg from '../../assets/background/Ellipse143.png';
+import color from '../../commons/colors';
 
 const OnBoardingScreen02 = ({navigation}) => {
   const handleButton = () => {
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
   textStyle: {
     textAlign: 'center',
     fontSize: 28,
-    color: 'black',
+    color: color.headingTextColor,
     fontWeight: '500',
     fontFamily: '../assets/fonts/Rubik-VariableFont_wght.ttf',
   },
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
   },
   textContaintStyle: {
     textAlign: 'center',
-    color: 'black',
+    color: color.containtTextColor,
     fontSize: 14,
     fontWeight: '400',
     fontFamily: '../assects/fonts/Rubik-Italic-VariableFont_wght.ttf',

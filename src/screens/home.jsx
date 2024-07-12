@@ -13,6 +13,7 @@ import TypesOfDoctorCard from '../components/typesOfDoctorsCard';
 import PopularDoctor from '../components/popularDoctor';
 import FeatureDoctorCard from '../components/featureDoctorCard';
 import SearchBar from '../components/searchBar';
+import color from '../commons/colors';
 
 const Home = () => {
   return (
@@ -21,7 +22,7 @@ const Home = () => {
         <StatusBar
           translucent={true}
           style="light"
-          backgroundColor={'#07D9AD'}
+          backgroundColor={color.backgroundColor}
         />
         <View style={styles.topHeadingBox}>
           <View>
@@ -54,7 +55,7 @@ const Home = () => {
 const styles = StyleSheet.create({
   topHeadingBox: {
     height: 156,
-    backgroundColor: '#07D9AD',
+    backgroundColor: color.backgroundColor,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     flex: 1,
@@ -67,14 +68,14 @@ const styles = StyleSheet.create({
     height: 22,
     fontSize: 18,
     fontWeight: '400',
-    color: '#FFFFFF',
+    color: color.userNameTextColor,
   },
   headingTextStyle: {
     width: 205,
     height: 30,
     fontSize: 25,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: color.commonTextColor,
   },
   userImgStyle: {
     height: 70,
@@ -101,11 +102,11 @@ const styles = StyleSheet.create({
   doctorTextStyle: {
     fontSize: 18,
     fontWeight: '500',
-    color: '#333333',
+    color: color.headingTextColor,
     marginLeft: 19,
   },
   sellAllDoctorTextStyle: {
-    color: '#333333',
+    color: color.containtTextColor,
     marginRight: 19,
   },
   featureDoctorBox: {

@@ -1,5 +1,6 @@
 import React from 'react';
 import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
+import color from '../commons/colors';
 
 const Images = [
   {
@@ -62,11 +63,11 @@ const styles = StyleSheet.create({
   card: {
     width: 190,
     height: 264,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: color.commonTextColor,
     borderRadius: 12,
     marginLeft: 10,
     marginRight: 10,
-    shadowColor: '#000000',
+    shadowColor: color.shadowColor,
     shadowOffset: {height: 1, width: 1},
     shadowOpacity: 0.2,
     shadowRadius: 1,
@@ -88,10 +89,10 @@ const styles = StyleSheet.create({
   doctorNameTextStyle: {
     fontSize: 18,
     fontWeight: '500',
-    color: '#333333',
+    color: color.headingTextColor,
   },
   doctorTypeTextStyle: {
-    color: '#677294',
+    color: color.headingTextColor,
     fontSize: 12,
     fontWeight: '400',
   },

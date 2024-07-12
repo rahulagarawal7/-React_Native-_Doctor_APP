@@ -1,5 +1,6 @@
 import React from 'react';
 import {FlatList, Image, StyleSheet, View} from 'react-native';
+import color from '../commons/colors';
 
 const Images = [
   {
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
   card: {
     height: 100,
     width: 90,
-    backgroundColor: '#3854F5',
+    backgroundColor: color.typeofDoctorBackgroundColor,
     margin: 8,
     justifyContent: 'center',
     alignItems: 'center',

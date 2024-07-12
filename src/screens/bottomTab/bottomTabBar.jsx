@@ -9,6 +9,7 @@ import bookIcon from '../../../src/assets/icons/Group(2).png';
 import findIcon from '../../../src/assets/icons/Group(1).png';
 import chatIcon from '../../../src/assets/icons/Vector.png';
 import {Image, StyleSheet} from 'react-native';
+import color from '../../commons/colors';
 
 const Tab = createBottomTabNavigator();
 
@@ -69,7 +70,7 @@ const BottomTab = () => {
 const styles = StyleSheet.create({
   tabNavigatorStyle: {
     height: 74,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: color.commonTextColor,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   },
