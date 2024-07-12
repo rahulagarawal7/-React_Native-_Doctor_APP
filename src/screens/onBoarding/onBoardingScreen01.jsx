@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import topImg from '../../assets/background/Ellipse153.png';
 import drImage from '../../assets/images/Ellipse154.png';
 import lastImg from '../../assets/background/Ellipse143.png';
+import color from '../../commons/colors';
 const OnBoardingScreen01 = ({navigation}) => {
   const handleButton = () => {
     navigation.navigate('OnBoardingScreen02');
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
     width: 336,
     height: 336,
     position: 'absolute',
-    marginTop: -220,
+    top: -220,
     marginLeft: 20,
   },
   textBox: {
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
   textStyle: {
     textAlign: 'center',
     fontSize: 28,
-    color: 'black',
+    color: color.headingTextColor,
     fontWeight: '500',
     fontFamily: '../assets/fonts/Rubik-VariableFont_wght.ttf',
   },
@@ -86,14 +87,14 @@ const styles = StyleSheet.create({
   },
   textContaintStyle: {
     textAlign: 'center',
-    color: 'black',
+    color: color.containtTextColor,
     fontSize: 14,
     fontWeight: '400',
     fontFamily: '../assects/fonts/Rubik-Italic-VariableFont_wght.ttf',
   },
 
   skip: {
-    color: 'black',
+    color: color.containtTextColor,
     textAlign: 'center',
     marginTop: 15,
   },

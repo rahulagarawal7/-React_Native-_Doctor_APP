@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import topImg from '../../assets/background/Ellipse153.png';
 import drImage from '../../assets/images/Ellipse154(2).png';
 import lastImg from '../../assets/background/Ellipse143.png';
+import color from '../../commons/colors';
 const OnBoardingScreen03 = ({navigation}) => {
   const handleButton = () => {
     navigation.navigate('bottomTabBar');
@@ -47,6 +48,7 @@ OnBoardingScreen03.propTypes = {
     navigate: PropTypes.func.isRequired,
   }).isRequired,
 };
+
 const styles = StyleSheet.create({
   firstImage: {
     height: 300,
@@ -55,29 +57,30 @@ const styles = StyleSheet.create({
   drImg: {
     width: 336,
     height: 336,
-    marginTop: -220,
+    position: 'absolute',
+    top: -220,
     marginLeft: 20,
   },
   textBox: {
-    height: 260,
+    marginTop: 60,
+    height: 280,
     width: 295,
     alignSelf: 'center',
-
     justifyContent: 'center',
   },
   text: {
-    height: 34,
+    height: 50,
   },
   textStyle: {
     textAlign: 'center',
     fontSize: 28,
-    color: 'black',
+    color: color.headingTextColor,
     fontWeight: '500',
     fontFamily: '../assets/fonts/Rubik-VariableFont_wght.ttf',
   },
   textContaint: {
     width: 274,
-    height: 100,
+    height: 70,
 
     justifyContent: 'center',
     alignItems: 'center',
@@ -85,14 +88,14 @@ const styles = StyleSheet.create({
   },
   textContaintStyle: {
     textAlign: 'center',
-    color: 'black',
+    color: color.containtTextColor,
     fontSize: 14,
     fontWeight: '400',
     fontFamily: '../assects/fonts/Rubik-Italic-VariableFont_wght.ttf',
   },
 
   skip: {
-    color: 'black',
+    color: color.containtTextColor,
     textAlign: 'center',
     marginTop: 15,
   },
@@ -103,7 +106,7 @@ const styles = StyleSheet.create({
 
     alignSelf: 'flex-end',
 
-    bottom: -25,
+    bottom: 0,
   },
 });
 export default OnBoardingScreen03;
