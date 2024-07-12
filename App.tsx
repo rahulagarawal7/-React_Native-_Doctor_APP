@@ -7,6 +7,9 @@ import OnBoardingScreen02 from './src/screens/onBoarding/onBoardingScreen02';
 import OnBoardingScreen01 from './src/screens/onBoarding/onBoardingScreen01';
 import BottomTab from './src/screens/bottomTab/bottomTabBar';
 import SplashScreen from './src/screens/splashScreen';
+import SelectTimeScreen from './src/screens/selectTimeScreen';
+import FindDoctorCard from './src/components/findDoctorCard';
+import FindDoctor from './src/screens/findDoctor';
 
 function App(): React.JSX.Element {
   const Stack = createNativeStackNavigator();
@@ -39,6 +42,16 @@ function App(): React.JSX.Element {
             options={{headerShown: false}}
             name="bottomTabBar"
             component={BottomTab}
+          />
+          <Stack.Screen
+            options={{headerShown: false}}
+            name="selectTimeScreen"
+            component={SelectTimeScreen}
+          />
+          <Stack.Screen
+            options={{headerShown: false}}
+            name="findDoctor"
+            component={FindDoctor}
           />
         </Stack.Navigator>
       </NavigationContainer>
