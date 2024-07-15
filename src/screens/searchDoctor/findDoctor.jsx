@@ -1,8 +1,8 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
-import BackButton from '../components/backbutton';
-import SearchBar from '../components/searchBar';
-import FindDoctorCard from '../components/findDoctorCard';
+import BackButton from '../../components/backbutton';
+import SearchBar from '../../components/searchBar';
+import FindDoctorCard from '../../components/findDoctorCard';
 
 const FindDoctor = () => {
   return (

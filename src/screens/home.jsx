@@ -10,10 +10,10 @@ import {
 } from 'react-native';
 import UserImg from '../assets/images/Ellipse26.png';
 import TypesOfDoctorCard from '../components/typesOfDoctorsCard';
-import PopularDoctor from '../components/popularDoctor';
 import FeatureDoctorCard from '../components/featureDoctorCard';
 import SearchBar from '../components/searchBar';
 import color from '../commons/colors';
+import PopularDoctorCard from '../components/popularDoctorCard';
 
 const Home = () => {
   return (
@@ -37,16 +37,7 @@ const Home = () => {
         <View style={styles.typesOfDoctorBox}>
           <TypesOfDoctorCard />
         </View>
-
-        <View style={styles.popularDoctorBox}>
-          <Text style={styles.doctorTextStyle}>Popular Doctor</Text>
-          <Text style={styles.sellAllDoctorTextStyle}>see all</Text>
-        </View>
-        <PopularDoctor />
-        <View style={styles.featureDoctorBox}>
-          <Text style={styles.doctorTextStyle}>Feature Doctor</Text>
-          <Text style={styles.sellAllDoctorTextStyle}>see all</Text>
-        </View>
+        <PopularDoctorCard />
         <FeatureDoctorCard />
       </SafeAreaView>
     </ScrollView>
@@ -98,24 +89,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-  },
-  doctorTextStyle: {
-    fontSize: 18,
-    fontWeight: '500',
-    color: color.headingTextColor,
-    marginLeft: 19,
-  },
-  sellAllDoctorTextStyle: {
-    color: color.containtTextColor,
-    marginRight: 19,
-  },
-  featureDoctorBox: {
-    marginLeft: 8,
-    height: 60,
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
   },
 });
 export default Home;

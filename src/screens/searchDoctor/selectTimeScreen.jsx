@@ -1,15 +1,15 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import BackButton from '../components/backbutton';
-import SelectTimeDrCard from '../components/selectTimeDrCard';
-import BookDate from '../components/bookDate';
+import SelectTimeDrCard from '../../components/selectTimeDrCard';
+import BookDate from '../../components/bookDate';
 import PropTypes from 'prop-types';
+import BackButton from '../../components/backbutton';
 
 const SelectTimeScreen = ({route}) => {
   const {item} = route.params;
   return (
     <View>
-      <BackButton headingName={'Select Time'} url={'findDoctor'} />
+      <BackButton headingName={'Select Time'} />
       <View style={styles.SelectTimeDrCardStyle}>
         <SelectTimeDrCard data={item} />
       </View>
@@ -23,7 +23,7 @@ const SelectTimeScreen = ({route}) => {
 SelectTimeScreen.propTypes = {
   route: PropTypes.shape({
     params: PropTypes.shape({
-      item: PropTypes.object.isRequired,
+      item: PropTypes.object?.isRequired,
     }).isRequired,
   }).isRequired,
 };
