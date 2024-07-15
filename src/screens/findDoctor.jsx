@@ -26,9 +26,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   findDoctorCard: {
-    marginTop: 50,
+    marginTop: 40,
     alignSelf: 'center',
-    marginBottom: 250,
+    marginBottom: 300,
   },
 });
 export default FindDoctor;

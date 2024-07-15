@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '400',
     color: color.backButtonHeadingTextColor,
-    top: 9,
+    marginTop: 9,
   },
 });
 BackButton.propTypes = {

@@ -62,13 +62,11 @@ const BookDate = () => {
   const [availablity, setAvailablity] = useState(false);
   const [nextAvailablity, setNextAvailablity] = useState(false);
   const [data, setData] = useState(null);
-  const [active, setActive] = useState(false);
 
   function handleClick(data) {
     setAvailablity(data.available);
     setData(data);
     setNextAvailablity(data.nextavailable);
-    setActive(!active);
   }
   return (
     <View>
