@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
     top: 10,
     height: 40,
     flexDirection: 'row',
+    position: 'absolute',
   },
   backButtonStyle: {
     height: 40,

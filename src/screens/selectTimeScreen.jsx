@@ -31,10 +31,10 @@ SelectTimeScreen.propTypes = {
 const styles = StyleSheet.create({
   SelectTimeDrCardStyle: {
     alignSelf: 'center',
-    marginTop: 30,
+    marginTop: 70,
   },
   bookDateStyle: {
-    marginTop: 25,
+    marginTop: 20,
     marginLeft: 10,
   },
 });

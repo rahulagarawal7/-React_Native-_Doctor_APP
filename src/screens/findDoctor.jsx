@@ -22,11 +22,11 @@ const FindDoctor = () => {
 
 const styles = StyleSheet.create({
   seacrchBarBox: {
-    top: 60,
+    marginTop: 100,
     alignItems: 'center',
   },
   findDoctorCard: {
-    top: 100,
+    marginTop: 50,
     alignSelf: 'center',
     marginBottom: 250,
   },

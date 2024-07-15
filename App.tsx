@@ -17,42 +17,25 @@ function App(): React.JSX.Element {
   return (
     <SafeAreaView style={{flex: 1}}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="splashScreen">
+        <Stack.Navigator
+          initialRouteName="splashScreen"
+          screenOptions={{headerShown: false}}>
           <Stack.Screen
-            options={{headerShown: false}}
             name="OnBoardingScreen01"
             component={OnBoardingScreen01}
           />
           <Stack.Screen
-            options={{headerShown: false}}
             name="OnBoardingScreen02"
             component={OnBoardingScreen02}
           />
           <Stack.Screen
-            options={{headerShown: false}}
             name="OnBoardingScreen03"
             component={OnBoardingScreen03}
           />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="splashScreen"
-            component={SplashScreen}
-          />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="bottomTabBar"
-            component={BottomTab}
-          />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="selectTimeScreen"
-            component={SelectTimeScreen}
-          />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="findDoctor"
-            component={FindDoctor}
-          />
+          <Stack.Screen name="splashScreen" component={SplashScreen} />
+          <Stack.Screen name="bottomTabBar" component={BottomTab} />
+          <Stack.Screen name="selectTimeScreen" component={SelectTimeScreen} />
+          <Stack.Screen name="findDoctor" component={FindDoctor} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
