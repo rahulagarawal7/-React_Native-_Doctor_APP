@@ -1,43 +1,71 @@
 import React from 'react';
-import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import color from '../commons/colors';
+import {useNavigation} from '@react-navigation/native';
 
-const Images = [
+const data = [
   {
     id: 1,
     url: require('../../src/assets/images/populatDoctors1.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Medical specialist',
+    fee: '$ 25.00/ hours',
   },
   {
     id: 2,
     url: require('../../src/assets/images/populatDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Dentist specialist',
+    fee: '$ 25.00/ hours',
   },
   {
     id: 3,
     url: require('../../src/assets/images/populatDoctors1.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Medical specialist',
+    fee: '$ 25.00/ hours',
   },
   {
     id: 4,
     url: require('../../src/assets/images/populatDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Dentist specialist',
+    fee: '$ 25.00/ hours',
   },
 ];
-const PopularDoctor = () => {
+const PopularDoctorCard = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
+      <View style={styles.popularDoctorBox}>
+        <Text style={styles.doctorTextStyle}>Popular Doctor</Text>
+        <Text
+          onPress={() => {
+            navigation.navigate('popularDoctors', {data: data});
+          }}
+          style={styles.sellAllDoctorTextStyle}>
+          see all
+        </Text>
+      </View>
       <FlatList
         showsHorizontalScrollIndicator={false}
         horizontal
-        data={Images}
+        data={data}
         renderItem={({item}) => {
           return (
-            <View style={styles.card}>
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate('doctorDetailsScreen', {data: item})
+              }
+              style={styles.card}>
               <Image style={styles.imageStyle} source={item?.url} />
               <View style={styles.cardDetailsBox}>
                 <Text style={styles.doctorNameTextStyle}>{item?.name}</Text>
@@ -47,7 +75,7 @@ const PopularDoctor = () => {
                   source={require('../../src/assets/icons/star.png')}
                 />
               </View>
-            </View>
+            </TouchableOpacity>
           );
         }}
         keyExtractor={item => item?.id}
@@ -59,6 +87,22 @@ const PopularDoctor = () => {
 const styles = StyleSheet.create({
   container: {
     marginLeft: 10,
+  },
+  doctorTextStyle: {
+    fontSize: 18,
+    fontWeight: '500',
+    color: color.headingTextColor,
+    marginLeft: 19,
+  },
+  sellAllDoctorTextStyle: {
+    color: color.containtTextColor,
+    marginRight: 19,
+  },
+  popularDoctorBox: {
+    height: 40,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   card: {
     width: 190,
@@ -102,4 +146,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PopularDoctor;
+export default PopularDoctorCard;

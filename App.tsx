@@ -7,9 +7,11 @@ import OnBoardingScreen02 from './src/screens/onBoarding/onBoardingScreen02';
 import OnBoardingScreen01 from './src/screens/onBoarding/onBoardingScreen01';
 import BottomTab from './src/screens/bottomTab/bottomTabBar';
 import SplashScreen from './src/screens/splashScreen';
-import SelectTimeScreen from './src/screens/selectTimeScreen';
-import FindDoctorCard from './src/components/findDoctorCard';
-import FindDoctor from './src/screens/findDoctor';
+import PopularDoctors from './src/screens/popularDoctorScreens/popularDoctor';
+import SelectTimeScreen from './src/screens/searchDoctor/selectTimeScreen';
+import FindDoctor from './src/screens/searchDoctor/findDoctor';
+import FeatureDoctors from './src/screens/featureDoctorScreens/featureDoctors';
+import DoctorDetailsScreen from './src/screens/doctorDetailsScreen';
 
 function App(): React.JSX.Element {
   const Stack = createNativeStackNavigator();
@@ -36,6 +38,12 @@ function App(): React.JSX.Element {
           <Stack.Screen name="bottomTabBar" component={BottomTab} />
           <Stack.Screen name="selectTimeScreen" component={SelectTimeScreen} />
           <Stack.Screen name="findDoctor" component={FindDoctor} />
+          <Stack.Screen name="popularDoctors" component={PopularDoctors} />
+          <Stack.Screen name="featureDoctors" component={FeatureDoctors} />
+          <Stack.Screen
+            name="doctorDetailsScreen"
+            component={DoctorDetailsScreen}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

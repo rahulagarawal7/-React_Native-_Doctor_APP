@@ -1,13 +1,26 @@
 import React from 'react';
-import {Image, StyleSheet, TextInput, View} from 'react-native';
+import {
+  Image,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import searchImg from '../../src/assets/Logo/search.png';
 import crossImg from '../../src/assets/Logo/cross.png';
 import color from '../commons/colors';
+import {useNavigation} from '@react-navigation/native';
 
 const SearchBar = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.barBox}>
-      <Image style={styles.searchImgStyle} source={searchImg} />
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('findDoctor');
+        }}>
+        <Image style={styles.searchImgStyle} source={searchImg} />
+      </TouchableOpacity>
       <TextInput
         placeholder="Search..."
         keyboardType="text"

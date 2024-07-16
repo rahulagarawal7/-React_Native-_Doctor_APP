@@ -8,6 +8,7 @@ const color = {
   shadowColor: '#000000',
   typeofDoctorBackgroundColor: '#3854F5',
   backButtonHeadingTextColor: '#222222',
+  OngoingPatientBox: '#CBCBCB',
 };
 
 export default color;

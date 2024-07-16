@@ -1,7 +1,6 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../home';
-import FindDoctor from '../findDoctor';
 import ChatScreen from '../chatScreen';
 import Book from '../book';
 import homeIcon from '../../../src/assets/icons/Group.png';
@@ -10,6 +9,7 @@ import findIcon from '../../../src/assets/icons/Group(1).png';
 import chatIcon from '../../../src/assets/icons/Vector.png';
 import {Image, StyleSheet} from 'react-native';
 import color from '../../commons/colors';
+import FavouriteDoctor from '../favouriteoctor';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,8 +32,8 @@ const BottomTab = () => {
         }}
       />
       <Tab.Screen
-        name="findDoctor"
-        component={FindDoctor}
+        name="favouriteDoctor"
+        component={FavouriteDoctor}
         options={{
           tabBarIcon: () => {
             return <Image source={findIcon} />;

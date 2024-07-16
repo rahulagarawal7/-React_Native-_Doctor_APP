@@ -5,13 +5,13 @@ import color from '../commons/colors';
 import {useNavigation} from '@react-navigation/native';
 import PropTypes from 'prop-types';
 
-const BackButton = ({headingName, url}) => {
+const BackButton = ({headingName}) => {
   const navigation = useNavigation();
 
   return (
     <View>
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => navigation?.navigate(url)}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image style={styles.backButtonStyle} source={backArrow} />
         </TouchableOpacity>
         <Text style={styles.headingNameText}>{headingName}</Text>
@@ -21,8 +21,8 @@ const BackButton = ({headingName, url}) => {
 };
 const styles = StyleSheet.create({
   container: {
-    left: 20,
-    top: 10,
+    marginLeft: 10,
+    marginTop: 10,
     height: 40,
     flexDirection: 'row',
     position: 'absolute',
@@ -41,6 +41,5 @@ const styles = StyleSheet.create({
 });
 BackButton.propTypes = {
   headingName: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
 };
 export default BackButton;
