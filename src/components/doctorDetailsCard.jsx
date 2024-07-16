@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 const DoctorDetailsCard = ({data, btn}) => {
   return (
-    <View style={[styles.card, {height: btn ? 170 : 123}]}>
+    <View style={[styles.card, btn ? styles.withBtn : styles.withOutBtn]}>
       <View style={styles.innerCard}>
         <View style={styles.detailsCard}>
           <Image style={styles.drImg} source={data?.url} />
@@ -50,6 +50,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.8,
     shadowRadius: 1,
     elevation: 3,
+  },
+  withBtn: {
+    height: 170,
+  },
+  withOutBtn: {
+    height: 123,
   },
   innerCard: {
     height: 140,

@@ -9,18 +9,24 @@ import PropTypes from 'prop-types';
 const DoctorDetailsScreen = ({route}) => {
   const {data} = route.params;
   return (
-    <ScrollView>
-      <BackButton headingName="Doctor Details" />
-      <View style={styles.DoctorDetailsCardStyle}>
-        <DoctorDetailsCard btn={true} data={data} />
+    <View style={styles.container}>
+      <View style={styles.backButtonStyles}>
+        <BackButton headingName="Doctor Details" />
       </View>
-      <View style={styles.OngoingPatientStyle}>
-        <OngoingPatient />
-      </View>
-      <View style={styles.serviceStyle}>
-        <Service />
-      </View>
-    </ScrollView>
+      <ScrollView
+        style={styles.scrollViewStyle}
+        contentContainerStyle={styles.scrollViewContentContainerStyle}>
+        <View style={styles.doctorDetailsCardStyle}>
+          <DoctorDetailsCard btn={true} data={data} />
+        </View>
+        <View style={styles.ongoingPatientStyle}>
+          <OngoingPatient />
+        </View>
+        <View style={styles.serviceStyle}>
+          <Service />
+        </View>
+      </ScrollView>
+    </View>
   );
 };
 DoctorDetailsScreen.propTypes = {
@@ -31,16 +37,23 @@ DoctorDetailsScreen.propTypes = {
   }).isRequired,
 };
 const styles = StyleSheet.create({
-  DoctorDetailsCardStyle: {
-    marginTop: 70,
+  container: {
+    flex: 1,
+  },
+  backButtonStyles: {
+    height: '10%',
+  },
+  scrollViewStyle: {
+    height: '90%',
+  },
+  doctorDetailsCardStyle: {
     alignSelf: 'center',
   },
-  OngoingPatientStyle: {
-    marginTop: 30,
+  ongoingPatientStyle: {
     alignSelf: 'center',
   },
-  serviceStyle: {
-    marginTop: 20,
+  scrollViewContentContainerStyle: {
+    gap: 30,
   },
 });
 

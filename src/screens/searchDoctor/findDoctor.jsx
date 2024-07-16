@@ -6,29 +6,30 @@ import FindDoctorCard from '../../components/findDoctorCard';
 
 const FindDoctor = () => {
   return (
-    <SafeAreaView>
-      <View>
-        <BackButton headingName={'Find Doctors'} url={'home'} />
-        <View style={styles.seacrchBarBox}>
-          <SearchBar />
-        </View>
-        <View style={styles.findDoctorCard}>
-          <FindDoctorCard />
-        </View>
+    <View style={styles.container}>
+      <BackButton headingName={'Find Doctors'} />
+      <View style={styles.seacrchBarBox}>
+        <SearchBar />
       </View>
-    </SafeAreaView>
+      <View style={styles.findDoctorCard}>
+        <FindDoctorCard />
+      </View>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   seacrchBarBox: {
     marginTop: 100,
     alignItems: 'center',
   },
   findDoctorCard: {
+    flex: 1,
     marginTop: 40,
     alignSelf: 'center',
-    marginBottom: 300,
   },
 });
 export default FindDoctor;
