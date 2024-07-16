@@ -1,31 +1,34 @@
 import React from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {ImageBackground, ScrollView, StyleSheet, View} from 'react-native';
 import BackButton from '../components/backbutton';
 import DoctorDetailsCard from '../components/doctorDetailsCard';
 import OngoingPatient from '../components/ongoingPatient';
 import Service from '../components/service';
 import PropTypes from 'prop-types';
+import backGroubdImage from '../assets/background/bg.png';
 
 const DoctorDetailsScreen = ({route}) => {
   const {data} = route.params;
   return (
     <View style={styles.container}>
-      <View style={styles.backButtonStyles}>
-        <BackButton headingName="Doctor Details" />
-      </View>
-      <ScrollView
-        style={styles.scrollViewStyle}
-        contentContainerStyle={styles.scrollViewContentContainerStyle}>
-        <View style={styles.doctorDetailsCardStyle}>
-          <DoctorDetailsCard btn={true} data={data} />
+      <ImageBackground source={backGroubdImage}>
+        <View style={styles.backButtonStyles}>
+          <BackButton headingName="Doctor Details" />
         </View>
-        <View style={styles.ongoingPatientStyle}>
-          <OngoingPatient />
-        </View>
-        <View style={styles.serviceStyle}>
-          <Service />
-        </View>
-      </ScrollView>
+        <ScrollView
+          style={styles.scrollViewStyle}
+          contentContainerStyle={styles.scrollViewContentContainerStyle}>
+          <View style={styles.doctorDetailsCardStyle}>
+            <DoctorDetailsCard btn={true} data={data} />
+          </View>
+          <View style={styles.ongoingPatientStyle}>
+            <OngoingPatient />
+          </View>
+          <View style={styles.serviceStyle}>
+            <Service />
+          </View>
+        </ScrollView>
+      </ImageBackground>
     </View>
   );
 };

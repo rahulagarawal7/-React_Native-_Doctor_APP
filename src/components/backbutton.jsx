@@ -1,9 +1,9 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import backArrow from '../../src/assets/icons/backArror.png';
 import color from '../commons/colors';
 import {useNavigation} from '@react-navigation/native';
 import PropTypes from 'prop-types';
+import backArrow from '../assets/Logo/back-arrow.png';
 
 const BackButton = ({headingName}) => {
   const navigation = useNavigation();
@@ -12,7 +12,9 @@ const BackButton = ({headingName}) => {
     <View>
       <View style={styles.container}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Image style={styles.backButtonStyle} source={backArrow} />
+          <View style={styles.backButtonStyle}>
+            <Image source={backArrow} />
+          </View>
         </TouchableOpacity>
         <Text style={styles.headingNameText}>{headingName}</Text>
       </View>
@@ -23,20 +25,24 @@ const styles = StyleSheet.create({
   container: {
     marginLeft: 10,
     marginTop: 10,
-    height: 40,
     flexDirection: 'row',
     position: 'absolute',
+    height: 30,
   },
   backButtonStyle: {
-    height: 40,
-    width: 40,
+    height: 30,
+    width: 30,
+    backgroundColor: color.commonTextColor,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
   },
   headingNameText: {
+    marginTop: 5,
     marginLeft: 29,
     fontSize: 18,
     fontWeight: '400',
     color: color.backButtonHeadingTextColor,
-    marginTop: 9,
   },
 });
 BackButton.propTypes = {

@@ -4,8 +4,10 @@ import color from '../commons/colors';
 import rating from '../assets/icons/star.png';
 import heartIcon from '../assets/icons/heart.png';
 import PropTypes from 'prop-types';
+import {useNavigation} from '@react-navigation/native';
 
 const DoctorDetailsCard = ({data, btn}) => {
+  const navigation = useNavigation();
   return (
     <View style={[styles.card, btn ? styles.withBtn : styles.withOutBtn]}>
       <View style={styles.innerCard}>
@@ -19,13 +21,17 @@ const DoctorDetailsCard = ({data, btn}) => {
             <Text style={styles.drTypeTextStyle}>{data?.type}</Text>
             <View style={styles.ratingBox}>
               <Image source={rating} />
-              <Text style={styles.drFeeTextStyle}>{data.fee}</Text>
+              <Text style={styles.drFeeTextStyle}>{data?.fee}</Text>
             </View>
           </View>
         </View>
         {btn && (
           <View style={styles.btnCard}>
-            <TouchableOpacity style={styles.btn}>
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate('appointmentFirst', {data: data})
+              }
+              style={styles.btn}>
               <Text style={styles.btnTextStyle}>Book Now</Text>
             </TouchableOpacity>
           </View>

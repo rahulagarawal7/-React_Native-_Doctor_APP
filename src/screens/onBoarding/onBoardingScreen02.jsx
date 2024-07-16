@@ -1,16 +1,13 @@
 import React from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import PropTypes from 'prop-types';
-import GetStartedButton from '../../components/getStartedButton';
 import TopImg from '../../assets/background/Ellipse153(1).png';
 import DrImage from '../../assets/images/Ellipse154(1).png';
 import LastImg from '../../assets/background/Ellipse143.png';
 import color from '../../commons/colors';
+import CommonButton from '../../components/commonbutton';
 
 const OnBoardingScreen02 = ({navigation}) => {
-  const handleButton = () => {
-    navigation.navigate('OnBoardingScreen03');
-  };
   return (
     <ScrollView>
       <View>
@@ -32,7 +29,7 @@ const OnBoardingScreen02 = ({navigation}) => {
           </View>
         </View>
       </View>
-      <GetStartedButton handleButton={handleButton} />
+      <CommonButton btnText={'Get Started'} url={'OnBoardingScreen03'} />
       <Text
         onPress={() => navigation.navigate('bottomTabBar')}
         style={styles.skip}>

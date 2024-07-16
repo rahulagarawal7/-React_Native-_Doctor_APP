@@ -1,12 +1,15 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
+import {ImageBackground, StyleSheet, View} from 'react-native';
 import BackButton from '../../components/backbutton';
 import SearchBar from '../../components/searchBar';
 import FindDoctorCard from '../../components/findDoctorCard';
+import backGroubdImage from '../../assets/background/bg.png';
 
 const FindDoctor = () => {
   return (
-    <View style={styles.container}>
+    <ImageBackground
+      source={backGroubdImage}
+      style={styles.backGroubdImageStyle}>
       <BackButton headingName={'Find Doctors'} />
       <View style={styles.seacrchBarBox}>
         <SearchBar />
@@ -14,12 +17,12 @@ const FindDoctor = () => {
       <View style={styles.findDoctorCard}>
         <FindDoctorCard />
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  backGroubdImageStyle: {
     flex: 1,
   },
   seacrchBarBox: {

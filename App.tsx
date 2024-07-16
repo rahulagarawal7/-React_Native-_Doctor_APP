@@ -12,6 +12,8 @@ import SelectTimeScreen from './src/screens/searchDoctor/selectTimeScreen';
 import FindDoctor from './src/screens/searchDoctor/findDoctor';
 import FeatureDoctors from './src/screens/featureDoctorScreens/featureDoctors';
 import DoctorDetailsScreen from './src/screens/doctorDetailsScreen';
+import AppointmentFirst from './src/screens/appointmentScreens/appointmentFirst';
+import AppointmentSecond from './src/screens/appointmentScreens/appointmentSecond';
 
 function App(): React.JSX.Element {
   const Stack = createNativeStackNavigator();
@@ -43,6 +45,11 @@ function App(): React.JSX.Element {
           <Stack.Screen
             name="doctorDetailsScreen"
             component={DoctorDetailsScreen}
+          />
+          <Stack.Screen name="appointmentFirst" component={AppointmentFirst} />
+          <Stack.Screen
+            name="appointmentSecond"
+            component={AppointmentSecond}
           />
         </Stack.Navigator>
       </NavigationContainer>
