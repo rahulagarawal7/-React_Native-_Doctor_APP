@@ -5,8 +5,12 @@ import topImg from '../../assets/background/Ellipse153.png';
 import drImage from '../../assets/images/Ellipse154.png';
 import lastImg from '../../assets/background/Ellipse143.png';
 import color from '../../commons/colors';
-import CommonButton from '../../components/commonbutton';
+import CommonButton from '../../components/commonButton';
 const OnBoardingScreen01 = ({navigation}) => {
+  const handleSubmit = () => {
+    navigation.navigate('OnBoardingScreen02');
+  };
+
   return (
     <ScrollView>
       <View>
@@ -20,15 +24,15 @@ const OnBoardingScreen01 = ({navigation}) => {
           <View style={styles.text}>
             <Text style={styles.textStyle}>Find Trusted Doctors</Text>
           </View>
-          <View style={styles.textContaint}>
-            <Text style={styles.textContaintStyle}>
+          <View style={styles.textContain}>
+            <Text style={styles.textContainerStyle}>
               Contrary to popular belief, Lorem Ipsum is not simply random text.
               It has roots in a piece of it over 2000 years old.
             </Text>
           </View>
         </View>
       </View>
-      <CommonButton btnText={'Get Started'} url={'OnBoardingScreen02'} />
+      <CommonButton btnText={'Get Started'} handleSubmit={handleSubmit} />
       <Text
         onPress={() => navigation.navigate('bottomTabBar')}
         style={styles.skip}>
@@ -71,9 +75,8 @@ const styles = StyleSheet.create({
     fontSize: 28,
     color: color.headingTextColor,
     fontWeight: '500',
-    fontFamily: '../assets/fonts/Rubik-VariableFont_wght.ttf',
   },
-  textContaint: {
+  textContain: {
     width: 274,
     height: 70,
 
@@ -81,16 +84,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
   },
-  textContaintStyle: {
+  textContainerStyle: {
     textAlign: 'center',
-    color: color.containtTextColor,
+    color: color.containTextColor,
     fontSize: 14,
     fontWeight: '400',
-    fontFamily: '../assects/fonts/Rubik-Italic-VariableFont_wght.ttf',
   },
 
   skip: {
-    color: color.containtTextColor,
+    color: color.containTextColor,
     textAlign: 'center',
     marginTop: 15,
   },

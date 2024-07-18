@@ -2,9 +2,16 @@ import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import color from '../commons/colors';
 import like from '../../src/assets/Logo/like.png';
-import CommonButton from './commonbutton';
+import CommonButton from './commonButton';
+import {useNavigation} from '@react-navigation/native';
+import PropTypes from 'prop-types';
 
-const ConfirmationCard = () => {
+const ConfirmationCard = ({drName, time}) => {
+  const navigation = useNavigation();
+  const handleSubmit = () => {
+    navigation.navigate('home');
+  };
+
   return (
     <View style={styles.card}>
       <View style={styles.innerCard}>
@@ -15,18 +22,28 @@ const ConfirmationCard = () => {
         </Text>
         <View style={styles.textBox}>
           <Text style={styles.textBoxTextStyle}>
-            You booked an appointment with Dr. Pediatrician Purpieson on
-            February 21, at 02:00 PM
+            You booked an appointment with {drName} on February 21, at{' '}
+            {time.time}
+            {time.period}
           </Text>
         </View>
         <View style={styles.lastBox}>
-          <CommonButton btnText={'Done'} url={'home'} />
+          <CommonButton btnText={'Done'} handleSubmit={handleSubmit} />
           <Text style={styles.editTextStyle}>Edit your appointment</Text>
         </View>
       </View>
     </View>
   );
 };
+
+ConfirmationCard.propTypes = {
+  drName: PropTypes.string.isRequired,
+  time: PropTypes.shape({
+    time: PropTypes.string,
+    period: PropTypes.string,
+  }).isRequired,
+};
+
 const styles = StyleSheet.create({
   card: {
     marginTop: 30,
@@ -55,7 +72,7 @@ const styles = StyleSheet.create({
   lowerHeadingTextStyle: {
     fontWeight: '400',
     fontSize: 20,
-    color: color.containtTextColor,
+    color: color.containTextColor,
     alignSelf: 'center',
   },
   textBox: {
@@ -65,7 +82,7 @@ const styles = StyleSheet.create({
   textBoxTextStyle: {
     fontWeight: '400',
     fontSize: 14,
-    color: color.containtTextColor,
+    color: color.containTextColor,
     alignSelf: 'center',
     textAlign: 'center',
   },
@@ -78,7 +95,7 @@ const styles = StyleSheet.create({
   editTextStyle: {
     fontWeight: '400',
     fontSize: 14,
-    color: color.containtTextColor,
+    color: color.containTextColor,
     alignSelf: 'center',
     textAlign: 'center',
   },

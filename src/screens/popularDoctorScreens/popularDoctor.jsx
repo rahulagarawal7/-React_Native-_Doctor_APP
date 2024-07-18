@@ -1,16 +1,16 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, View} from 'react-native';
 import SeeAllCard from '../../components/seeAllCard';
-import BackButton from '../../components/backbutton';
+import BackButton from '../../components/backButton';
 import PropTypes from 'prop-types';
-import backGroubdImage from '../../assets/background/bg.png';
+import backGroundImage from '../../assets/background/bg.png';
 
 const PopularDoctors = ({route}) => {
   const {data} = route.params;
   return (
     <ImageBackground
-      source={backGroubdImage}
-      style={styles.backGroubdImageStyle}>
+      source={backGroundImage}
+      style={styles.backGroundImageStyle}>
       <BackButton headingName="Popular Doctor" />
       <View style={styles.seeAllCardStyle}>
         <SeeAllCard data={data} />
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   seeAllCardStyle: {
     marginTop: 60,
   },
-  backGroubdImageStyle: {
+  backGroundImageStyle: {
     flex: 1,
   },
 });

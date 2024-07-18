@@ -14,8 +14,8 @@ import {useNavigation} from '@react-navigation/native';
 const Images = [
   {
     id: 1,
-    url: require('../../src/assets/images/populatDoctors2.png'),
-    name: 'Dr.Fillerup',
+    url: require('../../src/assets/images/popularDoctors2.png'),
+    name: 'Dr.Filler',
     type: 'Tooth Dentist',
     exp: '7 Years experience',
     available: 'Next Available',
@@ -27,7 +27,7 @@ const Images = [
   },
   {
     id: 2,
-    url: require('../../src/assets/images/populatDoctors1.png'),
+    url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Click',
     type: 'Tooth Dentist',
     exp: '7 Years experience',
@@ -40,7 +40,7 @@ const Images = [
   },
   {
     id: 3,
-    url: require('../../src/assets/images/populatDoctors2.png'),
+    url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Strain',
     type: 'Tooth Dentist',
     exp: '7 Years experience',
@@ -53,7 +53,7 @@ const Images = [
   },
   {
     id: 4,
-    url: require('../../src/assets/images/populatDoctors1.png'),
+    url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Blessing',
     type: 'Tooth Dentist',
     exp: '7 Years experience',
@@ -78,14 +78,14 @@ const FindDoctorCard = () => {
             <View style={styles.card}>
               <View style={styles.firstBox}>
                 <View style={styles.firstBoxInner}>
-                  <Image style={styles.doctorImg} source={item.url} />
-                  <View style={styles.discriptionBox}>
+                  <Image style={styles.doctorImg} source={item?.url} />
+                  <View style={styles.descriptionBox}>
                     <View style={styles.nameBox}>
-                      <Text style={styles.nameStyle}>{item.name}</Text>
+                      <Text style={styles.nameStyle}>{item?.name}</Text>
                       <Image source={heartIcon} />
                     </View>
-                    <Text style={styles.typeStyle}>{item.type}</Text>
-                    <Text style={styles.expStyle}>{item.exp}</Text>
+                    <Text style={styles.typeStyle}>{item?.type}</Text>
+                    <Text style={styles.expStyle}>{item?.exp}</Text>
                     <View style={styles.countBox}>
                       <Image source={circleIcon} />
                       <Text style={styles.countBoxTextStyle}>
@@ -96,7 +96,7 @@ const FindDoctorCard = () => {
                         source={circleIcon}
                       />
                       <Text style={styles.countBoxTextStyle}>
-                        {item.stories}
+                        {item?.stories}
                       </Text>
                     </View>
                   </View>
@@ -107,7 +107,7 @@ const FindDoctorCard = () => {
                   <Text style={styles.availableTextStyle}>
                     {item.available}
                   </Text>
-                  <Text style={styles.timeStyle}>{item.time}</Text>
+                  <Text style={styles.timeStyle}>{item?.time}</Text>
                 </View>
 
                 <TouchableOpacity
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     height: 92,
     width: 87,
   },
-  discriptionBox: {
+  descriptionBox: {
     height: 92,
     width: 200,
     alignSelf: 'center',
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
   countBoxTextStyle: {
     fontWeight: '400',
     fontSize: 12,
-    color: color.containtTextColor,
+    color: color.containTextColor,
   },
   timeBoxStyle: {
     height: 40,

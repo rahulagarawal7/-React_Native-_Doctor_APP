@@ -24,10 +24,10 @@ const BackButton = ({headingName}) => {
 const styles = StyleSheet.create({
   container: {
     marginLeft: 10,
-    marginTop: 10,
+    marginTop: 15,
     flexDirection: 'row',
     position: 'absolute',
-    height: 30,
+    height: 40,
   },
   backButtonStyle: {
     height: 30,

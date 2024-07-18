@@ -1,16 +1,12 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import color from '../commons/colors';
-import {useNavigation} from '@react-navigation/native';
 import PropTypes from 'prop-types';
 
-const CommonButton = ({btnText, url}) => {
-  const navigation = useNavigation();
+const CommonButton = ({btnText, handleSubmit}) => {
   return (
     <View>
-      <TouchableOpacity
-        onPress={() => navigation.navigate(url)}
-        style={styles.btnBox}>
+      <TouchableOpacity onPress={() => handleSubmit()} style={styles.btnBox}>
         <Text style={styles.btnTextStyle}>{btnText}</Text>
       </TouchableOpacity>
     </View>
@@ -19,7 +15,7 @@ const CommonButton = ({btnText, url}) => {
 
 CommonButton.propTypes = {
   btnText: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({

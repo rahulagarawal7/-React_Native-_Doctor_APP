@@ -1,18 +1,22 @@
 import React from 'react';
 import {ImageBackground, ScrollView, StyleSheet, View} from 'react-native';
-import BackButton from '../../components/backbutton';
 import PropTypes from 'prop-types';
 import DoctorDetailsCard from '../../components/doctorDetailsCard';
 import PatientProfile from '../../components/appointmentCards/patientProfile';
-import CommonButton from '../../components/commonbutton';
-import backGroubdImage from '../../assets/background/bg.png';
+import CommonButton from '../../components/commonButton';
+import backGroundImage from '../../assets/background/bg.png';
 import PatientDetailsCard from '../../components/appointmentCards/patientDetailsCard';
+import BackButton from '../../components/backButton';
 
-const AppointmentFirst = ({route}) => {
+const AppointmentFirst = ({route, navigation}) => {
   const {data} = route.params;
+
+  const handleSubmit = () => {
+    navigation.navigate('appointmentSecond', {data: data});
+  };
   return (
     <View style={styles.container}>
-      <ImageBackground source={backGroubdImage}>
+      <ImageBackground source={backGroundImage}>
         <View style={styles.backButtonStyle}>
           <BackButton headingName="Appointment" />
         </View>
@@ -25,7 +29,7 @@ const AppointmentFirst = ({route}) => {
 
           <PatientDetailsCard />
           <PatientProfile />
-          <CommonButton btnText={'Next'} url={'appointmentSecond'} />
+          <CommonButton btnText={'Next'} handleSubmit={handleSubmit} />
         </ScrollView>
       </ImageBackground>
     </View>
@@ -34,8 +38,11 @@ const AppointmentFirst = ({route}) => {
 AppointmentFirst.propTypes = {
   route: PropTypes.shape({
     params: PropTypes.shape({
-      data: PropTypes.object?.isRequired,
+      data: PropTypes.object,
     }).isRequired,
+  }).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
   }).isRequired,
 };
 const styles = StyleSheet.create({

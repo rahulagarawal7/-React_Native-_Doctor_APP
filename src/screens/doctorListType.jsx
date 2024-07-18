@@ -1,31 +1,30 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, View} from 'react-native';
-import BackButton from '../../components/backButton';
-import SeeAllCard from '../../components/seeAllCard';
+import BackButton from '../components/backButton';
 import PropTypes from 'prop-types';
-import backGroundImage from '../../assets/background/bg.png';
+import backGroundImage from '../assets/background/bg.png';
+import SeeByType from '../components/seeByType';
 
-const FeatureDoctors = ({route}) => {
-  const {data} = route.params;
+const DoctorListType = ({route}) => {
+  const {type} = route.params;
   return (
     <ImageBackground
       source={backGroundImage}
       style={styles.backGroundImageStyle}>
-      <BackButton headingName="Feature Doctor" />
+      <BackButton headingName={type} />
       <View style={styles.seeAllCardStyle}>
-        <SeeAllCard data={data} />
+        <SeeByType type={type} />
       </View>
     </ImageBackground>
   );
 };
 
-FeatureDoctors.propTypes = {
+DoctorListType.propTypes = {
   route: PropTypes.shape({
-    params: PropTypes.shape({
-      data: PropTypes?.array?.isRequired,
-    }).isRequired,
+    params: PropTypes.object,
   }).isRequired,
 };
+
 const styles = StyleSheet.create({
   seeAllCardStyle: {
     marginTop: 60,
@@ -34,4 +33,4 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-export default FeatureDoctors;
+export default DoctorListType;

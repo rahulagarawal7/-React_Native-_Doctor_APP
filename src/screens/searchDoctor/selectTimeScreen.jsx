@@ -3,15 +3,15 @@ import {ImageBackground, StyleSheet, View} from 'react-native';
 import SelectTimeDrCard from '../../components/selectTimeDrCard';
 import BookDate from '../../components/bookDate';
 import PropTypes from 'prop-types';
-import BackButton from '../../components/backbutton';
-import backGroubdImage from '../../assets/background/bg.png';
+import BackButton from '../../components/backButton';
+import backGroundImage from '../../assets/background/bg.png';
 
 const SelectTimeScreen = ({route}) => {
   const {item} = route.params;
   return (
     <ImageBackground
-      source={backGroubdImage}
-      style={styles.backGroubdImageStyle}>
+      source={backGroundImage}
+      style={styles.backGroundImageStyle}>
       <BackButton headingName={'Select Time'} />
       <View style={styles.SelectTimeDrCardStyle}>
         <SelectTimeDrCard data={item} />
@@ -32,7 +32,7 @@ SelectTimeScreen.propTypes = {
 };
 
 const styles = StyleSheet.create({
-  backGroubdImageStyle: {
+  backGroundImageStyle: {
     flex: 1,
   },
   SelectTimeDrCardStyle: {

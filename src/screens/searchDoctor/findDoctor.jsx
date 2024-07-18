@@ -1,17 +1,17 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, View} from 'react-native';
-import BackButton from '../../components/backbutton';
+import BackButton from '../../components/backButton';
 import SearchBar from '../../components/searchBar';
 import FindDoctorCard from '../../components/findDoctorCard';
-import backGroubdImage from '../../assets/background/bg.png';
+import backGroundImage from '../../assets/background/bg.png';
 
 const FindDoctor = () => {
   return (
     <ImageBackground
-      source={backGroubdImage}
-      style={styles.backGroubdImageStyle}>
+      source={backGroundImage}
+      style={styles.backGroundImageStyle}>
       <BackButton headingName={'Find Doctors'} />
-      <View style={styles.seacrchBarBox}>
+      <View style={styles.searchBarBox}>
         <SearchBar />
       </View>
       <View style={styles.findDoctorCard}>
@@ -22,10 +22,10 @@ const FindDoctor = () => {
 };
 
 const styles = StyleSheet.create({
-  backGroubdImageStyle: {
+  backGroundImageStyle: {
     flex: 1,
   },
-  seacrchBarBox: {
+  searchBarBox: {
     marginTop: 100,
     alignItems: 'center',
   },

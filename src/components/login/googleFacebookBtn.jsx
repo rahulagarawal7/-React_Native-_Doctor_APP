@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   logoTextStyle: {
     fontSize: 16,
     fontWeight: '300',
-    color: color.containtTextColor,
+    color: color.containTextColor,
   },
   imgStyle: {
     height: 20,

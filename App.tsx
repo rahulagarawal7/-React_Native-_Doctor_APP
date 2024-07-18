@@ -14,6 +14,7 @@ import FeatureDoctors from './src/screens/featureDoctorScreens/featureDoctors';
 import DoctorDetailsScreen from './src/screens/doctorDetailsScreen';
 import AppointmentFirst from './src/screens/appointmentScreens/appointmentFirst';
 import AppointmentSecond from './src/screens/appointmentScreens/appointmentSecond';
+import DoctorListType from './src/screens/doctorListType';
 
 function App(): React.JSX.Element {
   const Stack = createNativeStackNavigator();
@@ -51,6 +52,7 @@ function App(): React.JSX.Element {
             name="appointmentSecond"
             component={AppointmentSecond}
           />
+          <Stack.Screen name="doctorListType" component={DoctorListType} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

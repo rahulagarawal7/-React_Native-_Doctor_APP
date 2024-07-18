@@ -5,17 +5,17 @@ import color from '../../commons/colors';
 const profile = [
   {
     id: 1,
-    url: require('/Users/dr.mac/Desktop/DoctorAPP/src/assets/images/self.png'),
+    url: require('../../assets/images/self.png'),
     name: 'My Self',
   },
   {
     id: 2,
-    url: require('/Users/dr.mac/Desktop/DoctorAPP/src/assets/images/boy.png'),
+    url: require('../../assets/images/boy.png'),
     name: 'Child',
   },
   {
     id: 3,
-    url: require('/Users/dr.mac/Desktop/DoctorAPP/src/assets/images/self.png'),
+    url: require('../../assets/images/self.png'),
     name: 'My Self',
   },
   {
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 14,
     fontWeight: '400',
-    color: color.containtTextColor,
+    color: color.containTextColor,
   },
 });
 

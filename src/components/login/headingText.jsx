@@ -3,18 +3,18 @@ import {StyleSheet, Text, View} from 'react-native';
 import color from '../../commons/colors';
 import PropTypes from 'prop-types';
 
-const HeadingText = ({heading, containt}) => {
+const HeadingText = ({heading, contain}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.headingTextStyle}>{heading}</Text>
-      <Text style={styles.containtTextStyle}>{containt}</Text>
+      <Text style={styles.containTextStyle}>{contain}</Text>
     </View>
   );
 };
 
 HeadingText.propTypes = {
   heading: PropTypes.string.isRequired,
-  containt: PropTypes.string.isRequired,
+  contain: PropTypes.string.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -29,10 +29,10 @@ const styles = StyleSheet.create({
     color: color.headingTextColor,
     textAlign: 'center',
   },
-  containtTextStyle: {
+  containTextStyle: {
     fontSize: 14,
     fontWeight: '400',
-    color: color.containtTextColor,
+    color: color.containTextColor,
     textAlign: 'center',
   },
 });

@@ -5,9 +5,13 @@ import TopImg from '../../assets/background/Ellipse153(1).png';
 import DrImage from '../../assets/images/Ellipse154(1).png';
 import LastImg from '../../assets/background/Ellipse143.png';
 import color from '../../commons/colors';
-import CommonButton from '../../components/commonbutton';
+import CommonButton from '../../components/commonButton';
 
 const OnBoardingScreen02 = ({navigation}) => {
+  const handleSubmit = () => {
+    navigation.navigate('OnBoardingScreen03');
+  };
+
   return (
     <ScrollView>
       <View>
@@ -21,15 +25,15 @@ const OnBoardingScreen02 = ({navigation}) => {
           <View style={styles.text}>
             <Text style={styles.textStyle}>Choose Best Doctors</Text>
           </View>
-          <View style={styles.textContaint}>
-            <Text style={styles.textContaintStyle}>
+          <View style={styles.textContain}>
+            <Text style={styles.textContainerStyle}>
               Contrary to popular belief, Lorem Ipsum is not simply random text.
               It has roots in a piece of it over 2000 years old.
             </Text>
           </View>
         </View>
       </View>
-      <CommonButton btnText={'Get Started'} url={'OnBoardingScreen03'} />
+      <CommonButton btnText={'Get Started'} handleSubmit={handleSubmit} />
       <Text
         onPress={() => navigation.navigate('bottomTabBar')}
         style={styles.skip}>
@@ -77,7 +81,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     fontFamily: '../assets/fonts/Rubik-VariableFont_wght.ttf',
   },
-  textContaint: {
+  textContain: {
     width: 274,
     height: 100,
 
@@ -85,12 +89,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
   },
-  textContaintStyle: {
+  textContainerStyle: {
     textAlign: 'center',
-    color: color.containtTextColor,
+    color: color.containTextColor,
     fontSize: 14,
     fontWeight: '400',
-    fontFamily: '../assects/fonts/Rubik-Italic-VariableFont_wght.ttf',
   },
 
   skip: {
@@ -102,9 +105,7 @@ const styles = StyleSheet.create({
     height: 216,
     width: 216,
     position: 'absolute',
-
     alignSelf: 'flex-end',
-
     bottom: -25,
   },
 });

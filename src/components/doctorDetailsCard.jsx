@@ -13,7 +13,7 @@ const DoctorDetailsCard = ({data, btn}) => {
       <View style={styles.innerCard}>
         <View style={styles.detailsCard}>
           <Image style={styles.drImg} source={data?.url} />
-          <View style={styles.detialBox}>
+          <View style={styles.detailBox}>
             <View style={styles.nameBox}>
               <Text style={styles.drNameTextStyle}>{data?.name}</Text>
               <Image source={heartIcon} />
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  detialBox: {
+  detailBox: {
     marginLeft: 15,
     height: 110,
     width: 210,
@@ -104,13 +104,13 @@ const styles = StyleSheet.create({
     height: 30,
     fontSize: 14,
     fontWeight: '300',
-    color: color.containtTextColor,
+    color: color.containTextColor,
   },
   drFeeTextStyle: {
     height: 30,
     fontSize: 16,
     fontWeight: '500',
-    color: color.containtTextColor,
+    color: color.containTextColor,
   },
   btnCard: {
     height: 35,

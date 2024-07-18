@@ -12,7 +12,7 @@ const Service = () => {
           1. Patient care should be the number one priority.
         </Text>
         <Text style={styles.textStyle}>
-          2. If you run your practiceyou know how frustrating.
+          2. If you run your practice you know how frustrating.
         </Text>
         <Text style={styles.textStyle}>
           3. That’s why some of appointment reminder system.

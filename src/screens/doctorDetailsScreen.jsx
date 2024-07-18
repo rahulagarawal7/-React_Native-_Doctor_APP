@@ -1,17 +1,17 @@
 import React from 'react';
 import {ImageBackground, ScrollView, StyleSheet, View} from 'react-native';
-import BackButton from '../components/backbutton';
+import BackButton from '../components/backButton';
 import DoctorDetailsCard from '../components/doctorDetailsCard';
 import OngoingPatient from '../components/ongoingPatient';
 import Service from '../components/service';
 import PropTypes from 'prop-types';
-import backGroubdImage from '../assets/background/bg.png';
+import backGroundImage from '../assets/background/bg.png';
 
 const DoctorDetailsScreen = ({route}) => {
   const {data} = route.params;
   return (
     <View style={styles.container}>
-      <ImageBackground source={backGroubdImage}>
+      <ImageBackground source={backGroundImage}>
         <View style={styles.backButtonStyles}>
           <BackButton headingName="Doctor Details" />
         </View>

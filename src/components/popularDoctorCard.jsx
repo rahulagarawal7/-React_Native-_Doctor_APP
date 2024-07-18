@@ -13,28 +13,28 @@ import {useNavigation} from '@react-navigation/native';
 const data = [
   {
     id: 1,
-    url: require('../../src/assets/images/populatDoctors1.png'),
+    url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Medical specialist',
     fee: '$ 25.00/ hours',
   },
   {
     id: 2,
-    url: require('../../src/assets/images/populatDoctors2.png'),
+    url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Dentist specialist',
     fee: '$ 25.00/ hours',
   },
   {
     id: 3,
-    url: require('../../src/assets/images/populatDoctors1.png'),
+    url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Medical specialist',
     fee: '$ 25.00/ hours',
   },
   {
     id: 4,
-    url: require('../../src/assets/images/populatDoctors2.png'),
+    url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Blessing',
     type: 'Dentist specialist',
     fee: '$ 25.00/ hours',
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     marginLeft: 19,
   },
   sellAllDoctorTextStyle: {
-    color: color.containtTextColor,
+    color: color.containTextColor,
     marginRight: 19,
   },
   popularDoctorBox: {
