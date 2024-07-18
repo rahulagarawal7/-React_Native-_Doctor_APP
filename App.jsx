@@ -6,7 +6,6 @@ import OnBoardingScreen03 from './src/screens/onBoarding/onBoardingScreen03';
 import OnBoardingScreen02 from './src/screens/onBoarding/onBoardingScreen02';
 import OnBoardingScreen01 from './src/screens/onBoarding/onBoardingScreen01';
 import BottomTab from './src/screens/bottomTab/bottomTabBar';
-import SplashScreen from './src/screens/splashScreen';
 import PopularDoctors from './src/screens/popularDoctorScreens/popularDoctor';
 import SelectTimeScreen from './src/screens/searchDoctor/selectTimeScreen';
 import FindDoctor from './src/screens/searchDoctor/findDoctor';
@@ -15,8 +14,9 @@ import DoctorDetailsScreen from './src/screens/doctorDetailsScreen';
 import AppointmentFirst from './src/screens/appointmentScreens/appointmentFirst';
 import AppointmentSecond from './src/screens/appointmentScreens/appointmentSecond';
 import DoctorListType from './src/screens/doctorListType';
+import SplashScreen from './src/screens/SplashScreen';
 
-function App(): React.JSX.Element {
+function App() {
   const Stack = createNativeStackNavigator();
 
   return (

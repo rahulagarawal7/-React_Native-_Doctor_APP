@@ -42,8 +42,8 @@ const DoctorDetailsCard = ({data, btn}) => {
 };
 
 DoctorDetailsCard.propTypes = {
-  data: PropTypes.string?.isRequired,
-  btn: PropTypes.bool?.isRequired,
+  data: PropTypes.string.isRequired,
+  btn: PropTypes.bool.isRequired,
 };
 
 const styles = StyleSheet.create({
