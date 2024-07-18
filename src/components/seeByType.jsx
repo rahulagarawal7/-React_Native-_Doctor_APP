@@ -215,7 +215,7 @@ const SeeByType = ({type}) => {
 };
 
 SeeByType.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object,
   type: PropTypes.string.isRequired,
 };
 

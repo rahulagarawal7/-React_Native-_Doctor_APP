@@ -60,10 +60,10 @@ const AvailableTime = ({setTime, timeValue}) => {
 };
 
 AvailableTime.propTypes = {
-  setTime: PropTypes.func.isRequired,
+  setTime: PropTypes.func,
   timeValue: PropTypes.shape({
-    time: PropTypes.string,
-    period: PropTypes.string,
+    time: PropTypes.any,
+    period: PropTypes.any,
   }),
 };
 const styles = StyleSheet.create({
