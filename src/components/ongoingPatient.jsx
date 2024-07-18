@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 14,
     fontWeight: '400',
-    color: color.containtTextColor,
+    color: color.containTextColor,
   },
   patientNumber: {
     color: color.headingTextColor,

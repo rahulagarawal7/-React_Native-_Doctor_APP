@@ -9,7 +9,7 @@ import findIcon from '../../../src/assets/icons/Group(1).png';
 import chatIcon from '../../../src/assets/icons/Vector.png';
 import {Image, StyleSheet} from 'react-native';
 import color from '../../commons/colors';
-import FavouriteDoctor from '../favouriteoctor';
+import FavoriteDoctor from '../favoriteDoctor';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,8 +32,8 @@ const BottomTab = () => {
         }}
       />
       <Tab.Screen
-        name="favouriteDoctor"
-        component={FavouriteDoctor}
+        name="favoriteDoctor"
+        component={FavoriteDoctor}
         options={{
           tabBarIcon: () => {
             return <Image source={findIcon} />;

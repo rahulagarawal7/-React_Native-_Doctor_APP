@@ -29,7 +29,7 @@ const SeeAllCard = ({data}) => {
               <View style={styles.heartIconStyle}>
                 <Image source={heartIcon} />
               </View>
-              <View style={styles.containtStyle}>
+              <View style={styles.containerStyle}>
                 <Image style={styles.drImgStyle} source={item?.url} />
                 <Text style={styles.drNameTextStyle}>{item?.name}</Text>
                 <Text style={styles.drTypeTextStyle}>{item?.type}</Text>
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     height: 30,
   },
-  containtStyle: {
+  containerStyle: {
     height: 131,
     width: 108,
     justifyContent: 'center',

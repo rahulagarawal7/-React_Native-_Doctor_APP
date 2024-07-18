@@ -1,20 +1,23 @@
 import React, {useState} from 'react';
 import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import color from '../commons/colors';
+import CommonButton from './commonButton';
 
 const date = [
   {
+    id: 1,
     day: 'Today, 23 Feb',
-    availablity: 'No slots available',
+    availability: 'No slots available',
     available: false,
     nextSlot: 'Next availability on wed, 24 Feb',
-    nextavailable: true,
+    nextAvailable: true,
   },
   {
+    id: 2,
     day: 'Tomorrow, 24 Feb',
-    availablity: '9 slots available',
+    availability: '9 slots available',
     available: true,
-    nextavailable: false,
+    nextAvailable: false,
     afternoonSlots: 'Afternoon 7 slots',
     afternoonTimes: [
       '1:00 PM',
@@ -27,18 +30,20 @@ const date = [
     ],
   },
   {
+    id: 3,
     day: 'Today, 23 Feb',
-    availablity: 'No slots available',
+    availability: 'No slots available',
     available: false,
     nextSlot: 'Next availability on wed, 24 Feb',
-    nextavailable: true,
+    nextAvailable: true,
   },
   {
+    id: 4,
     day: 'Tomorrow, 24 Feb',
-    availablity: '9 slots available',
+    availability: '9 slots available',
     available: true,
     afternoonSlots: 'Afternoon 7 slots',
-    nextavailable: false,
+    nextAvailable: false,
     afternoonTimes: [
       '1:00 PM',
       '1:30 PM',
@@ -50,24 +55,34 @@ const date = [
     ],
   },
   {
+    id: 5,
     day: 'Today, 23 Feb',
-    availablity: 'No slots available',
+    availability: 'No slots available',
     available: false,
     nextSlot: 'Next availability on wed, 24 Feb',
-    nextavailable: true,
+    nextAvailable: true,
   },
 ];
 
 const BookDate = () => {
-  const [availablity, setAvailablity] = useState(false);
-  const [nextAvailablity, setNextAvailablity] = useState(false);
-  const [data, setData] = useState(null);
+  const [availability, setAvailability] = useState(false);
+  const [nextAvailability, setNextAvailability] = useState(false);
+  const [dataDr, setDataDr] = useState(null);
+  const [btnPress, setBtnPress] = useState(false);
+  const [time, setTime] = useState(null);
+  const nextSlotHandle = () => {
+    setBtnPress(!btnPress);
+  };
 
   function handleClick(data) {
-    setAvailablity(data.available);
-    setData(data);
-    setNextAvailablity(data.nextavailable);
+    setAvailability(data?.available);
+    setDataDr(data);
+    setNextAvailability(data?.nextAvailable);
   }
+
+  const handleTimePress = time => {
+    setTime(time);
+  };
   return (
     <View>
       <FlatList
@@ -77,11 +92,25 @@ const BookDate = () => {
         renderItem={({item}) => {
           return (
             <TouchableOpacity onPress={() => handleClick(item)}>
-              <View style={styles.mainBox}>
+              <View
+                style={[
+                  styles.mainBox,
+                  item.id === dataDr?.id && styles.onPressBoxStyle,
+                ]}>
                 <View style={styles.innerBox}>
-                  <Text style={styles.dayTextStyle}>{item.day}</Text>
-                  <Text style={styles.availablityTextStyle}>
-                    {item.availablity}
+                  <Text
+                    style={[
+                      styles.dayTextStyle,
+                      item.id === dataDr?.id && styles.onPressTextStyle,
+                    ]}>
+                    {item.day}
+                  </Text>
+                  <Text
+                    style={[
+                      styles.availabilityTextStyle,
+                      item.id === dataDr?.id && styles.onPressTextStyle,
+                    ]}>
+                    {item.availability}
                   </Text>
                 </View>
               </View>
@@ -89,11 +118,11 @@ const BookDate = () => {
           );
         }}
       />
-      <Text style={styles.slotHeadingTextStyle}>{data?.day}</Text>
-      {availablity && (
+      <Text style={styles.slotHeadingTextStyle}>{dataDr?.day}</Text>
+      {availability && (
         <View>
           <Text style={styles.afternoonSlotsTextStyle}>
-            {data?.afternoonSlots}
+            {dataDr?.afternoonSlots}
           </Text>
           <FlatList
             inverted={true}
@@ -101,29 +130,49 @@ const BookDate = () => {
               flexDirection: 'row',
               flexWrap: 'wrap-reverse',
             }}
-            data={data.afternoonTimes}
-            renderItem={({item}) => {
+            data={dataDr.afternoonTimes}
+            renderItem={({item, index}) => {
               return (
-                <TouchableOpacity style={styles.slotTimeBtn}>
-                  <Text style={styles.timeTextStyle}>{item}</Text>
+                <TouchableOpacity onPress={() => handleTimePress(item)}>
+                  <View
+                    style={[
+                      styles.slotTimeBtn,
+                      time === dataDr?.afternoonTimes[index]
+                        ? styles.onPressTimeBtn
+                        : styles.timeBtnStyle,
+                    ]}>
+                    <Text
+                      style={
+                        time === dataDr?.afternoonTimes[index]
+                          ? styles.timeTextStyleOnPress
+                          : styles.timeTextStyle
+                      }>
+                      {item}
+                    </Text>
+                  </View>
                 </TouchableOpacity>
               );
             }}
           />
         </View>
       )}
-      {nextAvailablity && (
+      {nextAvailability && (
         <View>
-          <Text style={styles.slotAvalilableTextStyle}>
-            {data?.availablity}
+          <Text style={styles.slotAvailableTextStyle}>
+            {dataDr?.availability}
           </Text>
-          <TouchableOpacity style={styles.btnStyle}>
-            <Text style={styles.btnTextStryle}>{data?.nextSlot}</Text>
-          </TouchableOpacity>
+
+          <View>
+            <CommonButton
+              btnText={dataDr?.nextSlot}
+              handleSubmit={nextSlotHandle}
+            />
+          </View>
           <Text style={styles.orTextStyle}>OR</Text>
-          <TouchableOpacity style={styles.btnStyle}>
-            <Text style={styles.btnTextStryle}>Contact Clinic</Text>
-          </TouchableOpacity>
+          <CommonButton
+            btnText="Contact Clinic"
+            handleSubmit={nextSlotHandle}
+          />
         </View>
       )}
     </View>
@@ -131,6 +180,9 @@ const BookDate = () => {
 };
 
 const styles = StyleSheet.create({
+  onPressTextStyle: {
+    color: color.commonTextColor,
+  },
   mainBox: {
     height: 54,
     width: 150,
@@ -139,21 +191,25 @@ const styles = StyleSheet.create({
     backgroundColor: color.commonTextColor,
     justifyContent: 'center',
   },
+  onPressBoxStyle: {
+    backgroundColor: color.buttonColor,
+  },
   innerBox: {
     height: 40,
     width: 130,
     alignSelf: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   dayTextStyle: {
     fontSize: 14,
     fontWeight: '400',
     color: color.headingTextColor,
   },
-  availablityTextStyle: {
+  availabilityTextStyle: {
     fontSize: 10,
     fontWeight: '400',
-    color: color.containtTextColor,
+    color: color.containTextColor,
   },
   slotHeadingTextStyle: {
     marginTop: 20,
@@ -162,31 +218,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
   },
-  slotAvalilableTextStyle: {
+  slotAvailableTextStyle: {
     marginTop: 30,
-    height: 20,
+    height: 30,
     alignSelf: 'center',
-    color: color.containtTextColor,
+    color: color.containTextColor,
   },
-  btnStyle: {
-    marginTop: 20,
-    height: 54,
-    width: 306,
-    backgroundColor: color.buttonColor,
-    borderRadius: 6,
-    alignSelf: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  btnTextStryle: {
-    fontSize: 18,
-    fontWeight: '500',
-    color: color.commonTextColor,
-  },
+
   orTextStyle: {
+    height: 40,
     fontSize: 14,
     fontWeight: '400',
-    color: color.containtTextColor,
+    color: color.containTextColor,
     alignSelf: 'center',
     marginTop: 20,
   },
@@ -203,16 +246,24 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     height: 40,
     width: 76,
-    backgroundColor: color.buttonColor,
     margin: 5,
     borderRadius: 6,
     justifyContent: 'center',
     alignItems: 'center',
   },
+  onPressTimeBtn: {
+    backgroundColor: color.buttonColor,
+  },
   timeTextStyle: {
     fontSize: 13,
     fontWeight: '500',
+    color: color.headingTextColor,
+  },
+  timeTextStyleOnPress: {
     color: color.commonTextColor,
+  },
+  timeBtnStyle: {
+    backgroundColor: color.commonTextColor,
   },
 });
 export default BookDate;

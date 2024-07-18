@@ -1,11 +1,11 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-const FavouriteDoctor = () => {
+const FavoriteDoctor = () => {
   return (
     <View>
-      <Text>Favourite doctor</Text>
+      <Text>Favorite doctor</Text>
     </View>
   );
 };
-export default FavouriteDoctor;
+export default FavoriteDoctor;

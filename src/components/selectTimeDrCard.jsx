@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     width: 200,
     fontSize: 11,
     fontWeight: '300',
-    color: color.containtTextColor,
+    color: color.containTextColor,
   },
   detailsBox: {
     marginLeft: 10,

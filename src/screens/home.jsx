@@ -3,7 +3,6 @@ import {
   Image,
   SafeAreaView,
   ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   View,
@@ -19,11 +18,6 @@ const Home = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <SafeAreaView>
-        <StatusBar
-          translucent={true}
-          style="light"
-          backgroundColor={color.backgroundColor}
-        />
         <View style={styles.topHeadingBox}>
           <View>
             <Text style={styles.userNameStyle}>Hi Handwerker!</Text>

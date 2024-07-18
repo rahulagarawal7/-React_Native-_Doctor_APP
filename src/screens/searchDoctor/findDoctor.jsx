@@ -1,28 +1,31 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
-import BackButton from '../../components/backbutton';
+import {ImageBackground, StyleSheet, View} from 'react-native';
+import BackButton from '../../components/backButton';
 import SearchBar from '../../components/searchBar';
 import FindDoctorCard from '../../components/findDoctorCard';
+import backGroundImage from '../../assets/background/bg.png';
 
 const FindDoctor = () => {
   return (
-    <View style={styles.container}>
+    <ImageBackground
+      source={backGroundImage}
+      style={styles.backGroundImageStyle}>
       <BackButton headingName={'Find Doctors'} />
-      <View style={styles.seacrchBarBox}>
+      <View style={styles.searchBarBox}>
         <SearchBar />
       </View>
       <View style={styles.findDoctorCard}>
         <FindDoctorCard />
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  backGroundImageStyle: {
     flex: 1,
   },
-  seacrchBarBox: {
+  searchBarBox: {
     marginTop: 100,
     alignItems: 'center',
   },

@@ -13,7 +13,7 @@ const Images = [
   {
     id: 1,
     url: require('../../src/assets/images/featureDoctor1.png'),
-    name: 'Dr.Fillerup',
+    name: 'Dr.Fillers',
     fee: '$ 25.00/ hours',
     type: 'Dentist specialist',
   },
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     marginLeft: 19,
   },
   sellAllDoctorTextStyle: {
-    color: color.containtTextColor,
+    color: color.containTextColor,
     marginRight: 19,
   },
   featureDoctorBox: {

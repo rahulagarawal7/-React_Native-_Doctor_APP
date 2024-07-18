@@ -1,6 +1,6 @@
 const color = {
   headingTextColor: '#333333',
-  containtTextColor: '#677294',
+  containTextColor: '#677294',
   backgroundColor: '#07D9AD',
   userNameTextColor: '#FAFAFA',
   commonTextColor: '#FFFFFF',
@@ -9,6 +9,7 @@ const color = {
   typeofDoctorBackgroundColor: '#3854F5',
   backButtonHeadingTextColor: '#222222',
   OngoingPatientBox: '#CBCBCB',
+  opacityColor: '#ECFAF5',
 };
 
 export default color;

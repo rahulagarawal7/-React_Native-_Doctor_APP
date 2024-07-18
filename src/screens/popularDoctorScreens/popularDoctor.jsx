@@ -1,18 +1,21 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {ImageBackground, StyleSheet, View} from 'react-native';
 import SeeAllCard from '../../components/seeAllCard';
-import BackButton from '../../components/backbutton';
+import BackButton from '../../components/backButton';
 import PropTypes from 'prop-types';
+import backGroundImage from '../../assets/background/bg.png';
 
 const PopularDoctors = ({route}) => {
   const {data} = route.params;
   return (
-    <View>
+    <ImageBackground
+      source={backGroundImage}
+      style={styles.backGroundImageStyle}>
       <BackButton headingName="Popular Doctor" />
       <View style={styles.seeAllCardStyle}>
         <SeeAllCard data={data} />
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 
@@ -26,6 +29,9 @@ PopularDoctors.propTypes = {
 const styles = StyleSheet.create({
   seeAllCardStyle: {
     marginTop: 60,
+  },
+  backGroundImageStyle: {
+    flex: 1,
   },
 });
 export default PopularDoctors;

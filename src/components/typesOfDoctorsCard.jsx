@@ -1,31 +1,47 @@
 import React from 'react';
-import {FlatList, Image, StyleSheet, View} from 'react-native';
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import color from '../commons/colors';
+import {useNavigation} from '@react-navigation/native';
 
 const Images = [
   {
     id: 1,
     url: require('../../src/assets/images/teeth.png'),
     bg: '#3854F5',
+    type: 'Dentist specialist',
   },
   {
     id: 2,
     url: require('../../src/assets/images/heart.png'),
     bg: '#CD7AC',
+    type: 'Cardiologist specialist',
   },
   {
     id: 3,
     url: require('../../src/assets/images/eye.png'),
     bg: '#FA7F44',
+    type: 'Eyes specialist',
   },
   {
     id: 4,
     url: require('../../src/assets/images/stomach.png'),
     bg: '#F94F51',
+    type: 'Medical specialist',
   },
 ];
 
 const TypesOfDoctorCard = () => {
+  const navigation = useNavigation();
+
+  const handlePress = type => {
+    navigation.navigate('doctorListType', {type: type});
+  };
   return (
     <View style={styles.container}>
       <FlatList
@@ -34,9 +50,11 @@ const TypesOfDoctorCard = () => {
         data={Images}
         renderItem={({item}) => {
           return (
-            <View style={styles.card}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => handlePress(item.type)}>
               <Image source={item?.url} />
-            </View>
+            </TouchableOpacity>
           );
         }}
         keyExtractor={item => item?.id}
