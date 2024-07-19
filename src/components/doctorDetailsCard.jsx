@@ -42,7 +42,7 @@ const DoctorDetailsCard = ({data, btn}) => {
 };
 
 DoctorDetailsCard.propTypes = {
-  data: PropTypes.string.isRequired,
+  data: PropTypes.object.isRequired,
   btn: PropTypes.bool.isRequired,
 };
 

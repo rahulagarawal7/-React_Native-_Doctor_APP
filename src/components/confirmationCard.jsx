@@ -6,7 +6,7 @@ import CommonButton from './commonButton';
 import {useNavigation} from '@react-navigation/native';
 import PropTypes from 'prop-types';
 
-const ConfirmationCard = ({drName, time}) => {
+const ConfirmationCard = ({drName, time, date}) => {
   const navigation = useNavigation();
   const handleSubmit = () => {
     navigation.navigate('home');
@@ -22,9 +22,8 @@ const ConfirmationCard = ({drName, time}) => {
         </Text>
         <View style={styles.textBox}>
           <Text style={styles.textBoxTextStyle}>
-            You booked an appointment with {drName} on February 21, at{' '}
-            {time.time}
-            {time.period}
+            You booked an appointment with {drName} on {date}, at {time?.time}
+            {time?.period}
           </Text>
         </View>
         <View style={styles.lastBox}>
@@ -38,10 +37,11 @@ const ConfirmationCard = ({drName, time}) => {
 
 ConfirmationCard.propTypes = {
   drName: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
   time: PropTypes.shape({
     time: PropTypes.string,
     period: PropTypes.string,
-  }).isRequired,
+  }),
 };
 
 const styles = StyleSheet.create({
