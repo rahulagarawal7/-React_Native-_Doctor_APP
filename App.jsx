@@ -15,6 +15,8 @@ import AppointmentFirst from './src/screens/appointmentScreens/appointmentFirst'
 import AppointmentSecond from './src/screens/appointmentScreens/appointmentSecond';
 import DoctorListType from './src/screens/doctorListType';
 import SplashScreen from './src/screens/SplashScreen';
+import SignUpScreen from './src/screens/signUpScreen';
+import LoginScreen from './src/screens/loginScreen';
 
 function App() {
   const Stack = createNativeStackNavigator();
@@ -53,6 +55,8 @@ function App() {
             component={AppointmentSecond}
           />
           <Stack.Screen name="doctorListType" component={DoctorListType} />
+          <Stack.Screen name="signUpScreen" component={SignUpScreen} />
+          <Stack.Screen name="loginScreen" component={LoginScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

@@ -29,6 +29,7 @@ PopularDoctors.propTypes = {
 const styles = StyleSheet.create({
   seeAllCardStyle: {
     marginTop: 60,
+    alignSelf: 'center',
   },
   backGroundImageStyle: {
     flex: 1,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   FlatList,
   Image,
@@ -11,6 +11,8 @@ import color from '../commons/colors';
 import heartIcon from '../../src/assets/icons/heart.png';
 import circleIcon from '../../src/assets/icons/circle.png';
 import {useNavigation} from '@react-navigation/native';
+import like from '../assets/icons/like.png';
+
 const Images = [
   {
     id: 1,
@@ -66,62 +68,63 @@ const Images = [
   },
 ];
 
-const FindDoctorCard = () => {
+const Card = ({item}) => {
+  const [isLiked, setIsLiked] = useState(false);
   const navigation = useNavigation();
 
+  const likeHandlePress = item => {
+    setIsLiked(!isLiked);
+  };
+
+  return (
+    <View style={styles.card}>
+      <View style={styles.firstBox}>
+        <View style={styles.firstBoxInner}>
+          <Image style={styles.doctorImg} source={item?.url} />
+          <View style={styles.descriptionBox}>
+            <View style={styles.nameBox}>
+              <Text style={styles.nameStyle}>{item?.name}</Text>
+              {isLiked ? (
+                <TouchableOpacity onPress={() => likeHandlePress(item)}>
+                  <Image source={heartIcon} />
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity onPress={() => likeHandlePress(item)}>
+                  <Image source={like} />
+                </TouchableOpacity>
+              )}
+            </View>
+            <Text style={styles.typeStyle}>{item?.type}</Text>
+            <Text style={styles.expStyle}>{item?.exp}</Text>
+            <View style={styles.countBox}>
+              <Image source={circleIcon} />
+              <Text style={styles.countBoxTextStyle}>{item.percent}</Text>
+              <Image style={styles.circleImgStyle} source={circleIcon} />
+              <Text style={styles.countBoxTextStyle}>{item?.stories}</Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View style={styles.secondBox}>
+        <View style={styles.timeBoxStyle}>
+          <Text style={styles.availableTextStyle}>{item.available}</Text>
+          <Text style={styles.timeStyle}>{item?.time}</Text>
+        </View>
+
+        <TouchableOpacity
+          style={styles.bookBtnStyle}
+          onPress={() => navigation.navigate('selectTimeScreen', {item: item})}>
+          <Text style={styles.bookBtnTextStyle}>Book</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+const FindDoctorCard = () => {
   return (
     <View>
-      <FlatList
-        data={Images}
-        renderItem={({item}) => {
-          return (
-            <View style={styles.card}>
-              <View style={styles.firstBox}>
-                <View style={styles.firstBoxInner}>
-                  <Image style={styles.doctorImg} source={item?.url} />
-                  <View style={styles.descriptionBox}>
-                    <View style={styles.nameBox}>
-                      <Text style={styles.nameStyle}>{item?.name}</Text>
-                      <Image source={heartIcon} />
-                    </View>
-                    <Text style={styles.typeStyle}>{item?.type}</Text>
-                    <Text style={styles.expStyle}>{item?.exp}</Text>
-                    <View style={styles.countBox}>
-                      <Image source={circleIcon} />
-                      <Text style={styles.countBoxTextStyle}>
-                        {item.percent}
-                      </Text>
-                      <Image
-                        style={styles.circleImgStyle}
-                        source={circleIcon}
-                      />
-                      <Text style={styles.countBoxTextStyle}>
-                        {item?.stories}
-                      </Text>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View style={styles.secondBox}>
-                <View style={styles.timeBoxStyle}>
-                  <Text style={styles.availableTextStyle}>
-                    {item.available}
-                  </Text>
-                  <Text style={styles.timeStyle}>{item?.time}</Text>
-                </View>
-
-                <TouchableOpacity
-                  style={styles.bookBtnStyle}
-                  onPress={() =>
-                    navigation.navigate('selectTimeScreen', {item: item})
-                  }>
-                  <Text style={styles.bookBtnTextStyle}>Book</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          );
-        }}
-      />
+      <FlatList data={Images} renderItem={({item}) => <Card item={item} />} />
     </View>
   );
 };

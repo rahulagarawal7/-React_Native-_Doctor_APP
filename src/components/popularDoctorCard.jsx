@@ -12,28 +12,28 @@ import {useNavigation} from '@react-navigation/native';
 
 const data = [
   {
-    id: 1,
+    id: 'p1',
     url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Medical specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 2,
+    id: 'p2',
     url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Dentist specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 3,
+    id: 'p3',
     url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Medical specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 4,
+    id: 'p4',
     url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Blessing',
     type: 'Dentist specialist',

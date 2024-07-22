@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {
   FlatList,
@@ -10,33 +10,54 @@ import {
 } from 'react-native';
 import color from '../commons/colors';
 import heartIcon from '../assets/icons/heart.png';
+import like from '../assets/icons/like.png';
 import {useNavigation} from '@react-navigation/native';
-const SeeAllCard = ({data}) => {
+
+const Card = ({item}) => {
+  const [isLiked, setIsLiked] = useState(false);
+  const [likedArray, setLikedArray] = useState([]);
+  function handleLikePress(item) {
+    setIsLiked(!isLiked);
+  }
+
   const navigation = useNavigation();
+  return (
+    <View style={styles.containerFirst}>
+      <View>
+        <View style={styles.heartIconStyle}>
+          {isLiked ? (
+            <TouchableOpacity onPress={() => handleLikePress(item)}>
+              <Image source={heartIcon} />
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity onPress={() => handleLikePress(item)}>
+              <Image source={like} />
+            </TouchableOpacity>
+          )}
+        </View>
+      </View>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('doctorDetailsScreen', {data: item})
+        }>
+        <View style={styles.containerStyle}>
+          <Image style={styles.drImgStyle} source={item?.url} />
+          <Text style={styles.drNameTextStyle}>{item?.name}</Text>
+          <Text style={styles.drTypeTextStyle}>{item?.type}</Text>
+        </View>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const SeeAllCard = ({data}) => {
   return (
     <View>
       <FlatList
         numColumns={2}
         data={data}
         keyExtractor={data?.id}
-        renderItem={({item}) => {
-          return (
-            <TouchableOpacity
-              onPress={() =>
-                navigation.navigate('doctorDetailsScreen', {data: item})
-              }
-              style={styles.container}>
-              <View style={styles.heartIconStyle}>
-                <Image source={heartIcon} />
-              </View>
-              <View style={styles.containerStyle}>
-                <Image style={styles.drImgStyle} source={item?.url} />
-                <Text style={styles.drNameTextStyle}>{item?.name}</Text>
-                <Text style={styles.drTypeTextStyle}>{item?.type}</Text>
-              </View>
-            </TouchableOpacity>
-          );
-        }}
+        renderItem={({item}) => <Card item={item} />}
       />
     </View>
   );
@@ -47,14 +68,14 @@ SeeAllCard.propTypes = {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  containerFirst: {
     height: 180,
     width: 160,
     borderRadius: 6,
     margin: 5,
     backgroundColor: color.commonTextColor,
   },
+
   heartIconStyle: {
     padding: 10,
     alignItems: 'flex-end',

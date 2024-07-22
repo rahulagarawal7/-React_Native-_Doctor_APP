@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {
   FlatList,
@@ -11,177 +11,214 @@ import {
 import color from '../commons/colors';
 import heartIcon from '../assets/icons/heart.png';
 import {useNavigation} from '@react-navigation/native';
+import like from '../assets/icons/like.png';
 
 const data = [
   {
-    id: 1,
+    id: 'type1',
     url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Dentist specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 2,
+    id: 'type2',
     url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Cardiologist Specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 3,
+    id: 'type3',
     url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Eyes specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 4,
+    id: 'type4',
     url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Medical specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 5,
+    id: 'type5',
     url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Dentist specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 6,
+    id: 'type6',
     url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Cardiologist Specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 7,
+    id: 'type7',
     url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Eyes specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 8,
+    id: 'type8',
     url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Medical specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 9,
+    id: 'type9',
     url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Dentist specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 10,
+    id: 'type10',
     url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Cardiologist Specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 11,
+    id: 'type11',
     url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Eyes specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 12,
+    id: 'type12',
     url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Medical specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 13,
+    id: 'type13',
     url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Dentist specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 14,
+    id: 'type14',
     url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Cardiologist Specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 15,
+    id: 'type15',
     url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Eyes specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 16,
+    id: 'type16',
     url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Medical specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 17,
+    id: 'type17',
     url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Dentist specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 18,
+    id: 'type18',
     url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Cardiologist Specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 19,
+    id: 'type19',
     url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Eyes specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 20,
+    id: 'type20',
     url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Medical specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 21,
+    id: 'type21',
     url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Medical specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 22,
+    id: 'type22',
     url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Dentist specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 23,
+    id: 'type23',
     url: require('../../src/assets/images/popularDoctors2.png'),
     name: 'Dr.Blessing',
     type: 'Cardiologist Specialist',
     fee: '$ 25.00/ hours',
   },
   {
-    id: 24,
+    id: 'type24',
     url: require('../../src/assets/images/popularDoctors1.png'),
     name: 'Dr.Fillerup Grab',
     type: 'Eyes specialist',
     fee: '$ 25.00/ hours',
   },
 ];
+
+const Card = ({item}) => {
+  const [isLiked, setIsLiked] = useState(false);
+  function handleLikePress(item) {
+    setIsLiked(!isLiked);
+  }
+
+  const navigation = useNavigation();
+  return (
+    <View style={styles.containerFirst}>
+      <View>
+        <View style={styles.heartIconStyle}>
+          {isLiked ? (
+            <TouchableOpacity onPress={() => handleLikePress(item)}>
+              <Image source={heartIcon} />
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity onPress={() => handleLikePress(item)}>
+              <Image source={like} />
+            </TouchableOpacity>
+          )}
+        </View>
+      </View>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('doctorDetailsScreen', {data: item})
+        }>
+        <View style={styles.containerStyle}>
+          <Image style={styles.drImgStyle} source={item?.url} />
+          <Text style={styles.drNameTextStyle}>{item?.name}</Text>
+          <Text style={styles.drTypeTextStyle}>{item?.type}</Text>
+        </View>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 const SeeByType = ({type}) => {
   const navigation = useNavigation();
@@ -191,24 +228,7 @@ const SeeByType = ({type}) => {
         numColumns={2}
         data={data.filter(ele => ele.type === type)}
         keyExtractor={data?.id}
-        renderItem={({item}) => {
-          return (
-            <TouchableOpacity
-              onPress={() =>
-                navigation.navigate('doctorDetailsScreen', {data: item})
-              }
-              style={styles.container}>
-              <View style={styles.heartIconStyle}>
-                <Image source={heartIcon} />
-              </View>
-              <View style={styles.containerStyle}>
-                <Image style={styles.drImgStyle} source={item?.url} />
-                <Text style={styles.drNameTextStyle}>{item?.name}</Text>
-                <Text style={styles.drTypeTextStyle}>{item?.type}</Text>
-              </View>
-            </TouchableOpacity>
-          );
-        }}
+        renderItem={({item}) => <Card item={item} />}
       />
     </View>
   );
@@ -220,14 +240,14 @@ SeeByType.propTypes = {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  containerFirst: {
     height: 180,
     width: 160,
     borderRadius: 6,
     margin: 5,
     backgroundColor: color.commonTextColor,
   },
+
   heartIconStyle: {
     padding: 10,
     alignItems: 'flex-end',

@@ -1,11 +1,12 @@
 import React from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import PropTypes from 'prop-types';
-import TopImg from '../../assets/background/Ellipse153(1).png';
-import DrImage from '../../assets/images/Ellipse154(1).png';
-import LastImg from '../../assets/background/Ellipse143.png';
+import topImg from '../../assets/background/Ellipse153(1).png';
+import drImage from '../../assets/images/Ellipse154(1).png';
+import lastImg from '../../assets/background/Ellipse143.png';
 import color from '../../commons/colors';
 import CommonButton from '../../components/commonButton';
+import HeadingText from '../../components/login/headingText';
 
 const OnBoardingScreen02 = ({navigation}) => {
   const handleSubmit = () => {
@@ -14,32 +15,24 @@ const OnBoardingScreen02 = ({navigation}) => {
 
   return (
     <ScrollView>
-      <View>
-        <View>
-          <Image style={styles.firstImage} source={TopImg} />
-        </View>
-        <View>
-          <Image style={styles.DrImg} source={DrImage} />
-        </View>
-        <View style={styles.textBox}>
-          <View style={styles.text}>
-            <Text style={styles.textStyle}>Choose Best Doctors</Text>
-          </View>
-          <View style={styles.textContain}>
-            <Text style={styles.textContainerStyle}>
-              Contrary to popular belief, Lorem Ipsum is not simply random text.
-              It has roots in a piece of it over 2000 years old.
-            </Text>
-          </View>
-        </View>
+      <Image style={styles.firstImage} source={topImg} />
+      <Image style={styles.drImg} source={drImage} />
+      <View style={styles.textBox}>
+        <HeadingText
+          heading="Choose Best Doctors"
+          contain=" Contrary to popular belief, Lorem Ipsum is not simply random text.
+          It has roots in a piece of it over 2000 years old."
+        />
       </View>
-      <CommonButton btnText={'Get Started'} handleSubmit={handleSubmit} />
-      <Text
-        onPress={() => navigation.navigate('bottomTabBar')}
-        style={styles.skip}>
-        Skip
-      </Text>
-      <Image style={styles.bg} source={LastImg} />
+      <View style={styles.box}>
+        <CommonButton btnText={'Get Started'} handleSubmit={handleSubmit} />
+        <Text
+          onPress={() => navigation.navigate('bottomTabBar')}
+          style={styles.skip}>
+          Skip
+        </Text>
+      </View>
+      <Image style={styles.bg} source={lastImg} />
     </ScrollView>
   );
 };
@@ -58,46 +51,21 @@ const styles = StyleSheet.create({
     top: -20,
     position: 'absolute',
   },
-  DrImg: {
+  drImg: {
     width: 336,
     height: 336,
-    marginTop: 80,
+    position: 'absolute',
+    top: 100,
     marginLeft: 20,
   },
   textBox: {
-    height: 260,
-    width: 295,
+    marginTop: 130,
+    height: 450,
     alignSelf: 'center',
-
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
   },
-  text: {
-    height: 40,
-  },
-  textStyle: {
-    textAlign: 'center',
-    fontSize: 28,
-    color: color.headingTextColor,
-    fontWeight: '500',
-    fontFamily: '../assets/fonts/Rubik-VariableFont_wght.ttf',
-  },
-  textContain: {
-    width: 274,
-    height: 100,
-
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center',
-  },
-  textContainerStyle: {
-    textAlign: 'center',
-    color: color.containTextColor,
-    fontSize: 14,
-    fontWeight: '400',
-  },
-
   skip: {
-    color: 'black',
+    color: color.containTextColor,
     textAlign: 'center',
     marginTop: 15,
   },
@@ -106,7 +74,13 @@ const styles = StyleSheet.create({
     width: 216,
     position: 'absolute',
     alignSelf: 'flex-end',
-    bottom: -25,
+    bottom: 0,
+    zIndex: -1,
+  },
+  box: {
+    height: 200,
+    justifyContent: 'flex-end',
+    marginBottom: 20,
   },
 });
 export default OnBoardingScreen02;
