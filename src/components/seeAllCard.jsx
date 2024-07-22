@@ -15,8 +15,8 @@ import {useNavigation} from '@react-navigation/native';
 
 const Card = ({item}) => {
   const [isLiked, setIsLiked] = useState(false);
-  const [likedArray, setLikedArray] = useState([]);
-  function handleLikePress(item) {
+
+  function handleLikePress() {
     setIsLiked(!isLiked);
   }
 
@@ -26,11 +26,11 @@ const Card = ({item}) => {
       <View>
         <View style={styles.heartIconStyle}>
           {isLiked ? (
-            <TouchableOpacity onPress={() => handleLikePress(item)}>
+            <TouchableOpacity onPress={() => handleLikePress()}>
               <Image source={heartIcon} />
             </TouchableOpacity>
           ) : (
-            <TouchableOpacity onPress={() => handleLikePress(item)}>
+            <TouchableOpacity onPress={() => handleLikePress()}>
               <Image source={like} />
             </TouchableOpacity>
           )}
@@ -50,6 +50,9 @@ const Card = ({item}) => {
   );
 };
 
+Card.propTypes = {
+  item: PropTypes.object,
+};
 const SeeAllCard = ({data}) => {
   return (
     <View>

@@ -4,6 +4,7 @@ import color from '../../../commons/colors';
 import HeadingCard from './headingCard';
 import InputTextField from '../inputTextField';
 import CommonButton from '../../commonButton';
+import PropTypes from 'prop-types';
 
 const OtpCard = ({setIsOtpCard, setIsResetPassword}) => {
   function handleSubmit() {
@@ -45,6 +46,11 @@ const OtpCard = ({setIsOtpCard, setIsResetPassword}) => {
       </View>
     </View>
   );
+};
+
+OtpCard.propTypes = {
+  setIsOtpCard: PropTypes.func,
+  setIsResetPassword: PropTypes.func,
 };
 const styles = StyleSheet.create({
   container: {

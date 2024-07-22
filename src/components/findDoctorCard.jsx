@@ -12,7 +12,7 @@ import heartIcon from '../../src/assets/icons/heart.png';
 import circleIcon from '../../src/assets/icons/circle.png';
 import {useNavigation} from '@react-navigation/native';
 import like from '../assets/icons/like.png';
-
+import PropTypes from 'prop-types';
 const Images = [
   {
     id: 1,
@@ -72,7 +72,7 @@ const Card = ({item}) => {
   const [isLiked, setIsLiked] = useState(false);
   const navigation = useNavigation();
 
-  const likeHandlePress = item => {
+  const likeHandlePress = () => {
     setIsLiked(!isLiked);
   };
 
@@ -85,11 +85,11 @@ const Card = ({item}) => {
             <View style={styles.nameBox}>
               <Text style={styles.nameStyle}>{item?.name}</Text>
               {isLiked ? (
-                <TouchableOpacity onPress={() => likeHandlePress(item)}>
+                <TouchableOpacity onPress={() => likeHandlePress()}>
                   <Image source={heartIcon} />
                 </TouchableOpacity>
               ) : (
-                <TouchableOpacity onPress={() => likeHandlePress(item)}>
+                <TouchableOpacity onPress={() => likeHandlePress()}>
                   <Image source={like} />
                 </TouchableOpacity>
               )}
@@ -129,6 +129,9 @@ const FindDoctorCard = () => {
   );
 };
 
+Card.propTypes = {
+  item: PropTypes.object,
+};
 const styles = StyleSheet.create({
   card: {
     height: 170,

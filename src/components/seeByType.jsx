@@ -186,7 +186,7 @@ const data = [
 
 const Card = ({item}) => {
   const [isLiked, setIsLiked] = useState(false);
-  function handleLikePress(item) {
+  function handleLikePress() {
     setIsLiked(!isLiked);
   }
 
@@ -196,11 +196,11 @@ const Card = ({item}) => {
       <View>
         <View style={styles.heartIconStyle}>
           {isLiked ? (
-            <TouchableOpacity onPress={() => handleLikePress(item)}>
+            <TouchableOpacity onPress={() => handleLikePress()}>
               <Image source={heartIcon} />
             </TouchableOpacity>
           ) : (
-            <TouchableOpacity onPress={() => handleLikePress(item)}>
+            <TouchableOpacity onPress={() => handleLikePress()}>
               <Image source={like} />
             </TouchableOpacity>
           )}
@@ -219,9 +219,10 @@ const Card = ({item}) => {
     </View>
   );
 };
-
+Card.propTypes = {
+  item: PropTypes.object,
+};
 const SeeByType = ({type}) => {
-  const navigation = useNavigation();
   return (
     <View>
       <FlatList

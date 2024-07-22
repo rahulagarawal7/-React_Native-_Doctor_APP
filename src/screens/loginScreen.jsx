@@ -16,7 +16,7 @@ import ForgetPasswordCard from '../components/login/forgetPassword/forgetPasswor
 import OtpCard from '../components/login/forgetPassword/otpCard';
 import ResetPasswordCard from '../components/login/forgetPassword/resetPassword';
 import PasswordTextField from '../components/login/passwordTextField';
-
+import PropTypes from 'prop-types';
 const LoginScreen = ({navigation}) => {
   const [isForgetPassword, setIsForgetPassword] = useState(false);
   const [isOtpCard, setIsOtpCard] = useState(false);
@@ -95,6 +95,11 @@ const LoginScreen = ({navigation}) => {
     </ImageBackground>
   );
 };
+
+LoginScreen.propTypes = {
+  navigation: PropTypes.any,
+};
+
 const styles = StyleSheet.create({
   backGroundImageStyle: {
     flex: 1,

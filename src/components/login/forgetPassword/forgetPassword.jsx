@@ -1,9 +1,10 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import color from '../../../commons/colors';
 import HeadingCard from './headingCard';
 import InputTextField from '../inputTextField';
 import CommonButton from '../../commonButton';
+import PropTypes from 'prop-types';
 
 const ForgetPasswordCard = ({setIsForgetPassword, setIsOtpCard}) => {
   function forgetCardHandle() {
@@ -28,6 +29,12 @@ we will send 4 digits code to your email."
     </View>
   );
 };
+
+ForgetPasswordCard.propTypes = {
+  setIsForgetPassword: PropTypes.func,
+  setIsOtpCard: PropTypes.func,
+};
+
 const styles = StyleSheet.create({
   container: {
     height: 400,

@@ -1,9 +1,10 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import color from '../../../commons/colors';
 import HeadingCard from './headingCard';
 import CommonButton from '../../commonButton';
 import PasswordTextField from '../passwordTextField';
+import PropTypes from 'prop-types';
 
 const ResetPasswordCard = ({setIsResetPassword}) => {
   function forgetCardHandle() {
@@ -31,6 +32,10 @@ const ResetPasswordCard = ({setIsResetPassword}) => {
       </View>
     </View>
   );
+};
+
+ResetPasswordCard.propTypes = {
+  setIsResetPassword: PropTypes.func,
 };
 const styles = StyleSheet.create({
   container: {

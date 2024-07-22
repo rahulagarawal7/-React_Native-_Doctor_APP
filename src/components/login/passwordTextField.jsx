@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {
   Image,
   StyleSheet,
-  Text,
   TextInput,
   TouchableOpacity,
   View,
@@ -10,6 +9,7 @@ import {
 import color from '../../commons/colors';
 import hidePasswordImg from '../../assets/icons/hidePassword.png';
 import showPasswordImg from '../../assets/icons/showPassword.png';
+import PropTypes from 'prop-types';
 
 const PasswordTextField = ({placeholder}) => {
   const [showImage, setShowImage] = useState(true);
@@ -35,6 +35,10 @@ const PasswordTextField = ({placeholder}) => {
       )}
     </View>
   );
+};
+
+PasswordTextField.propTypes = {
+  placeholder: PropTypes.string,
 };
 const styles = StyleSheet.create({
   container: {

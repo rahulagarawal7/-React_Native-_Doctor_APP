@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Image,
   ImageBackground,
   ScrollView,
   StyleSheet,
@@ -14,6 +13,7 @@ import InputTextField from '../components/login/inputTextField';
 import color from '../commons/colors';
 import CommonButton from '../components/commonButton';
 import PasswordTextField from '../components/login/passwordTextField';
+import PropTypes from 'prop-types';
 
 const SignUpScreen = ({navigation}) => {
   const handleSubmit = () => {
@@ -58,6 +58,11 @@ const SignUpScreen = ({navigation}) => {
     </ImageBackground>
   );
 };
+
+SignUpScreen.propTypes = {
+  navigation: PropTypes.any,
+};
+
 const styles = StyleSheet.create({
   backGroundImageStyle: {
     flex: 1,

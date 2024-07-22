@@ -1,6 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, TextInput, View} from 'react-native';
+import {StyleSheet, TextInput, View} from 'react-native';
 import color from '../../commons/colors';
+import PropTypes from 'prop-types';
 
 const InputTextField = ({placeholder, keyboardType, customStyles}) => {
   return (
@@ -12,6 +13,12 @@ const InputTextField = ({placeholder, keyboardType, customStyles}) => {
       />
     </View>
   );
+};
+
+InputTextField.propTypes = {
+  placeholder: PropTypes.string,
+  keyboardType: PropTypes.string,
+  customStyles: PropTypes.object,
 };
 const styles = StyleSheet.create({
   container: {
