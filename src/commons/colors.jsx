@@ -10,6 +10,7 @@ const color = {
   backButtonHeadingTextColor: '#222222',
   OngoingPatientBox: '#CBCBCB',
   opacityColor: '#ECFAF5',
+  lineColor: '#C4C4C4',
 };
 
 export default color;

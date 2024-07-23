@@ -1,12 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import color from '../commons/colors';
 import rating from '../assets/icons/star.png';
 import heartIcon from '../assets/icons/heart.png';
 import PropTypes from 'prop-types';
 import {useNavigation} from '@react-navigation/native';
+import like from '../assets/icons/like.png';
 
 const DoctorDetailsCard = ({data, btn}) => {
+  const [isLiked, setIsLiked] = useState(false);
+
+  function handleLikePress() {
+    setIsLiked(!isLiked);
+  }
+
   const navigation = useNavigation();
   return (
     <View style={[styles.card, btn ? styles.withBtn : styles.withOutBtn]}>
@@ -16,7 +23,15 @@ const DoctorDetailsCard = ({data, btn}) => {
           <View style={styles.detailBox}>
             <View style={styles.nameBox}>
               <Text style={styles.drNameTextStyle}>{data?.name}</Text>
-              <Image source={heartIcon} />
+              {isLiked ? (
+                <TouchableOpacity onPress={handleLikePress}>
+                  <Image source={heartIcon} />
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity onPress={handleLikePress}>
+                  <Image source={like} />
+                </TouchableOpacity>
+              )}
             </View>
             <Text style={styles.drTypeTextStyle}>{data?.type}</Text>
             <View style={styles.ratingBox}>

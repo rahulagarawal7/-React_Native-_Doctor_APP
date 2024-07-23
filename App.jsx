@@ -5,7 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import OnBoardingScreen03 from './src/screens/onBoarding/onBoardingScreen03';
 import OnBoardingScreen02 from './src/screens/onBoarding/onBoardingScreen02';
 import OnBoardingScreen01 from './src/screens/onBoarding/onBoardingScreen01';
-import BottomTab from './src/screens/bottomTab/bottomTabBar';
+import BottomTab from './src/navigation/bottomTabBar';
 import PopularDoctors from './src/screens/popularDoctorScreens/popularDoctor';
 import SelectTimeScreen from './src/screens/searchDoctor/selectTimeScreen';
 import FindDoctor from './src/screens/searchDoctor/findDoctor';
@@ -15,6 +15,8 @@ import AppointmentFirst from './src/screens/appointmentScreens/appointmentFirst'
 import AppointmentSecond from './src/screens/appointmentScreens/appointmentSecond';
 import DoctorListType from './src/screens/doctorListType';
 import SplashScreen from './src/screens/SplashScreen';
+import SignUpScreen from './src/screens/signUpScreen';
+import LoginScreen from './src/screens/loginScreen';
 
 function App() {
   const Stack = createNativeStackNavigator();
@@ -53,6 +55,8 @@ function App() {
             component={AppointmentSecond}
           />
           <Stack.Screen name="doctorListType" component={DoctorListType} />
+          <Stack.Screen name="signUpScreen" component={SignUpScreen} />
+          <Stack.Screen name="loginScreen" component={LoginScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

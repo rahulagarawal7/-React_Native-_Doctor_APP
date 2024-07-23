@@ -11,28 +11,28 @@ import color from '../commons/colors';
 import {useNavigation} from '@react-navigation/native';
 const Images = [
   {
-    id: 1,
+    id: 'f1',
     url: require('../../src/assets/images/featureDoctor1.png'),
     name: 'Dr.Fillers',
     fee: '$ 25.00/ hours',
     type: 'Dentist specialist',
   },
   {
-    id: 2,
+    id: 'f2',
     url: require('../../src/assets/images/featureDoctor2.png'),
     name: 'Dr.Click',
     fee: '$ 25.00/ hours',
     type: 'Medical specialist',
   },
   {
-    id: 3,
+    id: 'f3',
     url: require('../../src/assets/images/featureDoctor3.png'),
     name: 'Dr.Strain',
     fee: '$ 25.00/ hours',
     type: 'Dentist specialist',
   },
   {
-    id: 4,
+    id: 'f4',
     url: require('../../src/assets/images/featureDoctor1.png'),
     name: 'Dr.Blessing',
     fee: '$ 25.00/ hours',
