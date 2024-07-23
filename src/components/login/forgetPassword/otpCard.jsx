@@ -41,7 +41,7 @@ const OtpCard = ({setIsOtpCard, setIsResetPassword}) => {
           keyboardType={'text'}
         />
       </View>
-      <View style={styles.CommonButtonStyle}>
+      <View style={styles.commonButtonStyle}>
         <CommonButton btnText="Continue" handleSubmit={handleSubmit} />
       </View>
     </View>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: color.commonTextColor,
     position: 'absolute',
-    top: 380,
+    bottom: 0,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
   },
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     backgroundColor: color.lineColor,
     marginTop: 20,
   },
-  CommonButtonStyle: {
+  commonButtonStyle: {
     marginTop: 40,
   },
 });

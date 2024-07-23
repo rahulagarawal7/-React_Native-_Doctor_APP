@@ -23,7 +23,7 @@ const ForgetPasswordCard = ({setIsForgetPassword, setIsOtpCard}) => {
 we will send 4 digits code to your email."
       />
       <InputTextField placeholder={'Email'} keyboardType={'text'} />
-      <View style={styles.CommonButtonStyle}>
+      <View style={styles.commonButtonStyle}>
         <CommonButton btnText="Continue" handleSubmit={forgetCardHandle} />
       </View>
     </View>
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: color.commonTextColor,
     position: 'absolute',
-    top: 380,
+    bottom: 0,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
   },
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     backgroundColor: color.lineColor,
     marginTop: 20,
   },
-  CommonButtonStyle: {
+  commonButtonStyle: {
     marginTop: 40,
   },
 });
