@@ -14,7 +14,9 @@ const OnBoardingScreen03 = ({navigation}) => {
   return (
     <ScrollView>
       <Image style={styles.firstImage} source={topImg} />
-      <Image style={styles.drImg} source={drImage} />
+      <View style={styles.drImgBox}>
+        <Image style={styles.drImg} source={drImage} />
+      </View>
       <View style={styles.textBox}>
         <HeadingText
           heading="Easy Appointments"
@@ -49,12 +51,15 @@ const styles = StyleSheet.create({
     height: 300,
     width: 250,
   },
+  drImgBox: {
+    height: 500,
+    justifyContent: 'center',
+    position: 'absolute',
+    marginLeft: 20,
+  },
   drImg: {
     width: 336,
     height: 336,
-    position: 'absolute',
-    top: 100,
-    marginLeft: 20,
   },
   textBox: {
     marginTop: 60,

@@ -24,7 +24,7 @@ const ResetPasswordCard = ({setIsResetPassword}) => {
         <PasswordTextField placeholder={'New Password'} />
         <PasswordTextField placeholder={'Re-enter Password'} />
       </View>
-      <View style={styles.CommonButtonStyle}>
+      <View style={styles.commonButtonStyle}>
         <CommonButton
           btnText="Update Password"
           handleSubmit={forgetCardHandle}
@@ -39,11 +39,11 @@ ResetPasswordCard.propTypes = {
 };
 const styles = StyleSheet.create({
   container: {
-    height: 500,
+    height: 450,
     width: '100%',
     backgroundColor: color.commonTextColor,
     position: 'absolute',
-    top: 280,
+    bottom: 0,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
   },
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     backgroundColor: color.lineColor,
     marginTop: 20,
   },
-  CommonButtonStyle: {
+  commonButtonStyle: {
     marginTop: 40,
   },
   inputTextFieldStyle: {
