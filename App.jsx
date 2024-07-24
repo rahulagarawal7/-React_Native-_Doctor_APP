@@ -5,7 +5,6 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import OnBoardingScreen03 from './src/screens/onBoarding/onBoardingScreen03';
 import OnBoardingScreen02 from './src/screens/onBoarding/onBoardingScreen02';
 import OnBoardingScreen01 from './src/screens/onBoarding/onBoardingScreen01';
-import BottomTab from './src/screens/bottomTab/bottomTabBar';
 import PopularDoctors from './src/screens/popularDoctorScreens/popularDoctor';
 import SelectTimeScreen from './src/screens/searchDoctor/selectTimeScreen';
 import FindDoctor from './src/screens/searchDoctor/findDoctor';
@@ -17,6 +16,7 @@ import DoctorListType from './src/screens/doctorListType';
 import SplashScreen from './src/screens/SplashScreen';
 import SignUpScreen from './src/screens/signUpScreen';
 import LoginScreen from './src/screens/loginScreen';
+import BottomTab from './src/navigation/bottomTabBar';
 
 function App() {
   const Stack = createNativeStackNavigator();
