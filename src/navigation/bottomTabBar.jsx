@@ -6,9 +6,7 @@ import favIcon from '../../src/assets/icons/favoriteIcon.png';
 import chatIcon from '../../src/assets/icons/chatIcon.png';
 import {Image, StyleSheet, View} from 'react-native';
 import Home from '../screens/home';
-
 import color from '../commons/colors';
-
 import FavoriteDoctor from '../screens/favoriteDoctor';
 import Book from '../screens/book';
 import ChatScreen from '../screens/chatScreen';

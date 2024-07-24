@@ -23,7 +23,7 @@ const LoginScreen = ({navigation}) => {
   const [isResetPassword, setIsResetPassword] = useState(false);
 
   const handleSubmit = () => {
-    navigation.navigate('bottomTabBar');
+    navigation.navigate('drawerNavigation');
   };
   return (
     <ImageBackground

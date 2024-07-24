@@ -11,6 +11,7 @@ const color = {
   OngoingPatientBox: '#CBCBCB',
   opacityColor: '#ECFAF5',
   lineColor: '#C4C4C4',
+  drawerBackGroundColor: '#657497',
 };
 
 export default color;
