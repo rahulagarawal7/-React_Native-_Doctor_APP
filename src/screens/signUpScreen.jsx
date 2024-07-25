@@ -17,7 +17,7 @@ import PropTypes from 'prop-types';
 
 const SignUpScreen = ({navigation}) => {
   const handleSubmit = () => {
-    navigation.navigate('bottomTabBar');
+    navigation.navigate('drawerNavigation');
   };
   return (
     <ImageBackground

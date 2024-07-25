@@ -29,7 +29,7 @@ const OnBoardingScreen03 = ({navigation}) => {
 
         <Text
           onPress={() => {
-            navigation.navigate('bottomTabBar');
+            navigation.navigate('drawerNavigation');
           }}
           style={styles.skip}>
           Skip

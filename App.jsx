@@ -1,3 +1,4 @@
+import './gesture-handler';
 import React from 'react';
 import {SafeAreaView} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
@@ -18,6 +19,7 @@ import SplashScreen from './src/screens/SplashScreen';
 import SignUpScreen from './src/screens/signUpScreen';
 import LoginScreen from './src/screens/loginScreen';
 import BottomTab from './src/navigation/bottomTabBar';
+import DrawerNavigation from './src/navigation/drawerNavigation';
 
 function App() {
   const Stack = createNativeStackNavigator();
@@ -42,6 +44,7 @@ function App() {
           />
           <Stack.Screen name="splashScreen" component={SplashScreen} />
           <Stack.Screen name="bottomTabBar" component={BottomTab} />
+          <Stack.Screen name="drawerNavigation" component={DrawerNavigation} />
           <Stack.Screen name="selectTimeScreen" component={SelectTimeScreen} />
           <Stack.Screen name="findDoctor" component={FindDoctor} />
           <Stack.Screen name="popularDoctors" component={PopularDoctors} />

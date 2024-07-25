@@ -5,16 +5,20 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
-import UserImg from '../assets/images/Ellipse26.png';
+import UserImg from '../../src/assets/images/userProfile.jpg';
 import TypesOfDoctorCard from '../components/typesOfDoctorsCard';
 import FeatureDoctorCard from '../components/featureDoctorCard';
 import SearchBar from '../components/searchBar';
 import color from '../commons/colors';
 import PopularDoctorCard from '../components/popularDoctorCard';
+import {useNavigation} from '@react-navigation/native';
 
 const Home = () => {
+  const navigation = useNavigation();
+
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <SafeAreaView>
@@ -23,7 +27,9 @@ const Home = () => {
             <Text style={styles.userNameStyle}>Hi Handwerker!</Text>
             <Text style={styles.headingTextStyle}>Find Your Doctor</Text>
           </View>
-          <Image style={styles.userImgStyle} source={UserImg} />
+          <TouchableOpacity onPress={() => navigation.openDrawer()}>
+            <Image style={styles.userImgStyle} source={UserImg} />
+          </TouchableOpacity>
         </View>
         <View style={styles.searchBarStyle}>
           <SearchBar />
@@ -65,6 +71,7 @@ const styles = StyleSheet.create({
   userImgStyle: {
     height: 70,
     width: 70,
+    borderRadius: 70,
   },
   searchBarStyle: {
     flex: 1,
