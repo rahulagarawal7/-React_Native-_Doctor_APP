@@ -17,6 +17,7 @@ import DoctorListType from './src/screens/doctorListType';
 import SplashScreen from './src/screens/SplashScreen';
 import SignUpScreen from './src/screens/signUpScreen';
 import LoginScreen from './src/screens/loginScreen';
+import BottomTab from './src/navigation/bottomTabBar';
 
 function App() {
   const Stack = createNativeStackNavigator();
