@@ -1,14 +1,14 @@
 import React from 'react';
 import {ImageBackground, StyleSheet} from 'react-native';
 import backGroundImage from '/Users/dr.mac/Desktop/DoctorAPP/src/assets/background/bg.png';
-import BackButton from '../../components/backButton';
+import BackButton from '../../../components/backButton';
 
-const MyDoctorScreen = () => {
+const TestBooking = () => {
   return (
     <ImageBackground
       style={styles.backGroundImageStyle}
       source={backGroundImage}>
-      <BackButton headingName="My Doctors" />
+      <BackButton headingName="Test Booking" />
     </ImageBackground>
   );
 };
@@ -17,4 +17,4 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-export default MyDoctorScreen;
+export default TestBooking;

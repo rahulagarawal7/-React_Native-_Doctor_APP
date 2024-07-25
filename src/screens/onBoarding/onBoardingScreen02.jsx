@@ -29,7 +29,7 @@ const OnBoardingScreen02 = ({navigation}) => {
       <View style={styles.box}>
         <CommonButton btnText={'Get Started'} handleSubmit={handleSubmit} />
         <Text
-          onPress={() => navigation.navigate('bottomTabBar')}
+          onPress={() => navigation.navigate('drawerNavigation')}
           style={styles.skip}>
           Skip
         </Text>

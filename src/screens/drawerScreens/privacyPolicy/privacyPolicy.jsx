@@ -8,10 +8,11 @@ import {
   View,
 } from 'react-native';
 import backGroundImage from '/Users/dr.mac/Desktop/DoctorAPP/src/assets/background/bg.png';
-import BackButton from '../../components/backButton';
-import color from '../../commons/colors';
 import PropTypes from 'prop-types';
 import circlePoint from '/Users/dr.mac/Desktop/DoctorAPP/src/assets/icons/circle.png';
+import BackButton from '../../../components/backButton';
+import color from '../../../commons/colors';
+
 const Points = ({data}) => {
   return (
     <View style={styles.pointsBox}>
