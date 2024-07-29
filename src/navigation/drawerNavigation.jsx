@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import BottomTabBar from './bottomTabBar';
 import color from '../commons/colors';
@@ -25,6 +25,7 @@ import close from '../../src/assets/icons/close.png';
 import logoutIcon from '../../src/assets/icons/Logout.png';
 import Logout from '../screens/drawerScreens/logout/logout';
 import PropTypes from 'prop-types';
+import {useNavigation} from '@react-navigation/native';
 
 const Icon = ({img}) => {
   return (
@@ -39,7 +40,7 @@ Icon.propTypes = {
 };
 const DrawerNavigation = () => {
   const Drawer = createDrawerNavigator();
-
+  const navigation = useNavigation();
   return (
     <View style={{flex: 1}}>
       <Drawer.Navigator
@@ -58,7 +59,12 @@ const DrawerNavigation = () => {
             drawerIcon: () => {
               return (
                 <View style={styles.headerBox}>
-                  <Image style={styles.userImgStyle} source={UserImg} />
+                  <TouchableOpacity
+                    onPress={() =>
+                      navigation.navigate('userProfile', {userImg: UserImg})
+                    }>
+                    <Image style={styles.userImgStyle} source={UserImg} />
+                  </TouchableOpacity>
 
                   <View style={styles.detailsBox}>
                     <Text style={styles.userNameTextStyle}>User Name</Text>

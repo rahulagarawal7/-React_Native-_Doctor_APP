@@ -19,6 +19,8 @@ import SplashScreen from './src/screens/SplashScreen';
 import SignUpScreen from './src/screens/signUpScreen';
 import LoginScreen from './src/screens/loginScreen';
 import DrawerNavigation from './src/navigation/drawerNavigation';
+import AddRecords from './src/screens/drawerScreens/medicalRecords/addRecords';
+import UserProfile from './src/screens/userProfile';
 
 function App() {
   const Stack = createNativeStackNavigator();
@@ -60,6 +62,8 @@ function App() {
           <Stack.Screen name="doctorListType" component={DoctorListType} />
           <Stack.Screen name="signUpScreen" component={SignUpScreen} />
           <Stack.Screen name="loginScreen" component={LoginScreen} />
+          <Stack.Screen name="addRecords" component={AddRecords} />
+          <Stack.Screen name="userProfile" component={UserProfile} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
