@@ -36,7 +36,7 @@ const Icon = ({img}) => {
 };
 
 Icon.propTypes = {
-  img: PropTypes.string,
+  img: PropTypes.any,
 };
 const DrawerNavigation = () => {
   const Drawer = createDrawerNavigator();

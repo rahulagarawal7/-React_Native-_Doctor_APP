@@ -12,19 +12,21 @@ const ForgetPasswordCard = ({setIsForgetPassword, setIsOtpCard}) => {
     setIsOtpCard(true);
   }
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => setIsForgetPassword(false)}
-        style={styles.line}
-      />
-      <HeadingCard
-        heading="Forgot password"
-        contain="Enter your email for the verification process,
+    <View style={styles.mainBox}>
+      <View style={styles.container}>
+        <TouchableOpacity
+          onPress={() => setIsForgetPassword(false)}
+          style={styles.line}
+        />
+        <HeadingCard
+          heading="Forgot password"
+          contain="Enter your email for the verification process,
 we will send 4 digits code to your email."
-      />
-      <InputTextField placeholder={'Email'} keyboardType={'text'} />
-      <View style={styles.commonButtonStyle}>
-        <CommonButton btnText="Continue" handleSubmit={forgetCardHandle} />
+        />
+        <InputTextField placeholder={'Email'} keyboardType={'text'} />
+        <View style={styles.commonButtonStyle}>
+          <CommonButton btnText="Continue" handleSubmit={forgetCardHandle} />
+        </View>
       </View>
     </View>
   );
@@ -36,6 +38,7 @@ ForgetPasswordCard.propTypes = {
 };
 
 const styles = StyleSheet.create({
+  mainBox: {},
   container: {
     height: 400,
     width: '100%',
