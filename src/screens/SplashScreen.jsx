@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {Image, ImageBackground, StyleSheet, View} from 'react-native';
-import bgImg from '../assets/background/bg.png';
-import logo from '../assets/Logo/Logo.png';
+import {BackgroundImage, SplashLogo} from '../assets/index';
 
 const SplashScreen = ({navigation}) => {
   useEffect(() => {
@@ -12,9 +11,9 @@ const SplashScreen = ({navigation}) => {
   }, []);
 
   return (
-    <ImageBackground source={bgImg} style={styles.bgImg}>
+    <ImageBackground source={BackgroundImage} style={styles.bgImg}>
       <View style={styles.logoStyles}>
-        <Image style={styles.logo} source={logo} />
+        <Image style={styles.logo} source={SplashLogo} />
       </View>
     </ImageBackground>
   );

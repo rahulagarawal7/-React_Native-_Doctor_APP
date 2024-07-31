@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {ImageBackground, ScrollView, StyleSheet, View} from 'react-native';
 import BackButton from '../../components/backButton';
-import backGroundImage from '../../assets/background/bg.png';
+import {BackgroundImage} from '../../assets/index';
 import AvailableTime from '../../components/appointmentTimeCards/availableTime';
 import CommonButton from '../../components/commonButton';
 import ReminderCard from '../../components/appointmentTimeCards/reminderCard';
@@ -22,7 +22,7 @@ const AppointmentSecond = ({route}) => {
   return (
     <>
       <View style={btnPress ? styles.containerTrue : styles.containerFalse}>
-        <ImageBackground source={backGroundImage}>
+        <ImageBackground source={BackgroundImage}>
           <View style={styles.backButtonStyle}>
             <BackButton headingName="Appointment" />
           </View>
@@ -39,8 +39,10 @@ const AppointmentSecond = ({route}) => {
         </ImageBackground>
       </View>
       {btnPress && (
-        <View style={styles.confirmationCardContainerStyle}>
-          <ConfirmationCard drName={data?.name} time={time} date={date} />
+        <View style={styles.confirmationCardContainer}>
+          <View style={styles.confirmationCardContainerStyle}>
+            <ConfirmationCard drName={data?.name} time={time} date={date} />
+          </View>
         </View>
       )}
     </>
@@ -60,11 +62,14 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   confirmationCardContainerStyle: {
-    marginTop: 40,
-    flex: 20,
     position: 'absolute',
     alignSelf: 'center',
     opacity: 1,
+  },
+  confirmationCardContainer: {
+    height: 800,
+    justifyContent: 'center',
+    alignContent: 'center',
   },
   containerTrue: {
     opacity: 0.2,
@@ -83,8 +88,8 @@ const styles = StyleSheet.create({
     height: '90%',
   },
   box: {
-    gap: 30,
-    height: 400,
+    gap: 40,
+    height: 490,
     backgroundColor: color.commonTextColor,
     borderTopLeftRadius: 45,
     borderTopRightRadius: 45,

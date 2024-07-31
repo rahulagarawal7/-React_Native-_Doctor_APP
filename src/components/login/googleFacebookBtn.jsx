@@ -1,18 +1,17 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import color from '../../commons/colors';
-import googleLogo from '/Users/dr.mac/Desktop/DoctorAPP/src/assets/Logo/google.png';
-import facebookIcon from '/Users/dr.mac/Desktop/DoctorAPP/src/assets/Logo/faceBook.png';
+import {GoogleLogo, FaceBookLogo} from '../../assets/index';
 
 const GoogleFaceBookBtn = () => {
   return (
     <View style={styles.box}>
       <TouchableOpacity style={styles.btnBox}>
-        <Image style={styles.imgStyle} source={googleLogo} />
+        <Image style={styles.imgStyle} source={GoogleLogo} />
         <Text style={styles.logoTextStyle}>Google</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.btnBox}>
-        <Image style={styles.imgStyle} source={facebookIcon} />
+        <Image style={styles.imgStyle} source={FaceBookLogo} />
         <Text style={styles.logoTextStyle}>Facebook</Text>
       </TouchableOpacity>
     </View>

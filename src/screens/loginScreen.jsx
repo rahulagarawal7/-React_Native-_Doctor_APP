@@ -6,7 +6,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import backGroundImage from '../assets/background/bg.png';
+import {BackgroundImage} from '../assets/index';
 import HeadingText from '../components/login/headingText';
 import GoogleFaceBookBtn from '../components/login/googleFacebookBtn';
 import InputTextField from '../components/login/inputTextField';
@@ -28,7 +28,7 @@ const LoginScreen = ({navigation}) => {
   return (
     <ImageBackground
       style={styles.backGroundImageStyle}
-      source={backGroundImage}>
+      source={BackgroundImage}>
       <ScrollView>
         <View
           style={[

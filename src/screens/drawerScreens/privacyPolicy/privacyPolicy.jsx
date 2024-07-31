@@ -7,16 +7,15 @@ import {
   Text,
   View,
 } from 'react-native';
-import backGroundImage from '/Users/dr.mac/Desktop/DoctorAPP/src/assets/background/bg.png';
+import {BackgroundImage, GreenCircle} from '../../../assets/index';
 import PropTypes from 'prop-types';
-import circlePoint from '/Users/dr.mac/Desktop/DoctorAPP/src/assets/icons/circle.png';
 import BackButton from '../../../components/backButton';
 import color from '../../../commons/colors';
 
 const Points = ({data}) => {
   return (
     <View style={styles.pointsBox}>
-      <Image style={styles.pointsBoxImgStyle} source={circlePoint} />
+      <Image style={styles.pointsBoxImgStyle} source={GreenCircle} />
       <Text style={styles.pointsBoxTextStyle}>{data}</Text>
     </View>
   );
@@ -26,7 +25,7 @@ const PrivacyPolicy = () => {
   return (
     <ImageBackground
       style={styles.backGroundImageStyle}
-      source={backGroundImage}>
+      source={BackgroundImage}>
       <BackButton headingName="Privacy & Policy" />
       <ScrollView style={styles.scrollViewStyle}>
         <View style={styles.headingTextBox}>

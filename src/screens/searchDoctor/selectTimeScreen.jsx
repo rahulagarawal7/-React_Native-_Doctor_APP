@@ -4,13 +4,12 @@ import SelectTimeDrCard from '../../components/selectTimeDrCard';
 import BookDate from '../../components/bookDate';
 import PropTypes from 'prop-types';
 import BackButton from '../../components/backButton';
-import backGroundImage from '../../assets/background/bg.png';
-
+import {BackgroundImage} from '../../assets/index';
 const SelectTimeScreen = ({route}) => {
   const {item} = route.params;
   return (
     <ImageBackground
-      source={backGroundImage}
+      source={BackgroundImage}
       style={styles.backGroundImageStyle}>
       <BackButton headingName={'Select Time'} />
       <View style={styles.SelectTimeDrCardStyle}>

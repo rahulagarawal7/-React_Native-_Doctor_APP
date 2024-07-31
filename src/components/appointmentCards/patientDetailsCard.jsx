@@ -10,11 +10,13 @@ const PatientDetailsCard = () => {
         style={styles.input}
         placeholder="Patient Name"
         keyboardType="numeric"
+        placeholderTextColor={color.containTextColor}
       />
       <TextInput
         style={styles.input}
         placeholder="Contact Number"
         keyboardType="numeric"
+        placeholderTextColor={color.containTextColor}
       />
     </SafeAreaView>
   );
@@ -30,7 +32,7 @@ const styles = StyleSheet.create({
   },
   input: {
     marginTop: 20,
-    padding: 20,
+    padding: 10,
     height: 54,
     width: 335,
     borderRadius: 10,
@@ -38,6 +40,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     fontSize: 16,
     fontWeight: '500',
+    color: color.containTextColor,
   },
 });
 export default PatientDetailsCard;

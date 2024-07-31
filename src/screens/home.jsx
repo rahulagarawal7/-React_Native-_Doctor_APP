@@ -8,7 +8,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import UserImg from '../../src/assets/images/userProfile.jpg';
+
+import {UserImage} from '../assets/index';
 import TypesOfDoctorCard from '../components/typesOfDoctorsCard';
 import FeatureDoctorCard from '../components/featureDoctorCard';
 import SearchBar from '../components/searchBar';
@@ -28,7 +29,7 @@ const Home = () => {
             <Text style={styles.headingTextStyle}>Find Your Doctor</Text>
           </View>
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
-            <Image style={styles.userImgStyle} source={UserImg} />
+            <Image style={styles.userImgStyle} source={UserImage} />
           </TouchableOpacity>
         </View>
         <View style={styles.searchBarStyle}>

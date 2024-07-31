@@ -1,31 +1,35 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import BottomTabBar from './bottomTabBar';
+import {BottomTabBar} from './index';
 import color from '../commons/colors';
-import myDoctorIcon from '../../src/assets/icons/myDoctors.png';
-import paymentsIcon from '../../src/assets/icons/payments.png';
-import medicalOrderIcon from '../../src/assets/icons/medicineOrder.png';
-import medicalRecordsIcon from '../../src/assets/icons/medicalRecords.png';
-import testBookingsIcon from '../../src/assets/icons/testBookings.png';
-import privacyPolicyIcon from '../../src/assets/icons/privacyPolicy.png';
-import settingsIcon from '../../src/assets/icons/settings.png';
-import helpCenterIcon from '../../src/assets/icons/helpCenter.png';
-import MyDoctorScreen from '../screens/drawerScreens/myDoctorScreen/myDoctorScreen';
-import MedicalRecords from '../screens/drawerScreens/medicalRecords/medicalRecords';
-import MedicineOrder from '../screens/drawerScreens/medicineOrders/medicineOrders';
-import TestBooking from '../screens/drawerScreens/testBookings/testBookings';
-import PrivacyPolicy from '../screens/drawerScreens/privacyPolicy/privacyPolicy';
-import HelpCenter from '../screens/drawerScreens/helpCenter/helpCenter';
-import Payments from '../screens/drawerScreens/payments/payments';
-import Settings from '../screens/drawerScreens/settings/settings';
-import UserImg from '../../src/assets/images/userProfile.jpg';
-import phoneIcon from '../../src/assets/icons/phoneIcon.png';
-import close from '../../src/assets/icons/close.png';
-import logoutIcon from '../../src/assets/icons/Logout.png';
-import Logout from '../screens/drawerScreens/logout/logout';
+import {
+  closeIcon,
+  HelpCenterIcon,
+  SettingIcon,
+  TestBookingIcon,
+  PrivacyPolicyIcon,
+  MyDoctorsIcon,
+  PaymentIcon,
+  PhoneIcon,
+  LogoutIcon,
+  MedicineOrderIcon,
+  MedicalRecordsIcon,
+  UserImage,
+} from '../assets/index';
 import PropTypes from 'prop-types';
-
+import {useNavigation} from '@react-navigation/native';
+import {
+  Settings,
+  Payments,
+  HelpCenter,
+  PrivacyPolicy,
+  TestBookings,
+  MedicalRecords,
+  MedicineOrders,
+  MyDoctorScreen,
+  Logout,
+} from '../screens/index';
 const Icon = ({img}) => {
   return (
     <View style={styles.iconStyle}>
@@ -35,11 +39,11 @@ const Icon = ({img}) => {
 };
 
 Icon.propTypes = {
-  img: PropTypes.string,
+  img: PropTypes.any,
 };
 const DrawerNavigation = () => {
   const Drawer = createDrawerNavigator();
-
+  const navigation = useNavigation();
   return (
     <View style={{flex: 1}}>
       <Drawer.Navigator
@@ -58,16 +62,21 @@ const DrawerNavigation = () => {
             drawerIcon: () => {
               return (
                 <View style={styles.headerBox}>
-                  <Image style={styles.userImgStyle} source={UserImg} />
+                  <TouchableOpacity
+                    onPress={() =>
+                      navigation.navigate('userProfile', {userImg: UserImage})
+                    }>
+                    <Image style={styles.userImgStyle} source={UserImage} />
+                  </TouchableOpacity>
 
                   <View style={styles.detailsBox}>
                     <Text style={styles.userNameTextStyle}>User Name</Text>
                     <View style={styles.numberBox}>
-                      <Image source={phoneIcon} />
+                      <Image source={PhoneIcon} />
                       <Text style={styles.userPhoneTextStyle}>123333770</Text>
                     </View>
                   </View>
-                  <Image style={styles.closeStyle} source={close} />
+                  <Image style={styles.closeStyle} source={closeIcon} />
                 </View>
               );
             },
@@ -77,56 +86,56 @@ const DrawerNavigation = () => {
           name="myDoctorScreen"
           component={MyDoctorScreen}
           options={{
-            drawerIcon: () => <Icon img={myDoctorIcon} />,
+            drawerIcon: () => <Icon img={MyDoctorsIcon} />,
           }}
         />
         <Drawer.Screen
           name="medicalRecords"
           component={MedicalRecords}
           options={{
-            drawerIcon: () => <Icon img={medicalRecordsIcon} />,
+            drawerIcon: () => <Icon img={MedicalRecordsIcon} />,
           }}
         />
         <Drawer.Screen
           name="payments"
           component={Payments}
           options={{
-            drawerIcon: () => <Icon img={paymentsIcon} />,
+            drawerIcon: () => <Icon img={PaymentIcon} />,
           }}
         />
         <Drawer.Screen
           name="medicineOrder"
-          component={MedicineOrder}
+          component={MedicineOrders}
           options={{
-            drawerIcon: () => <Icon img={medicalOrderIcon} />,
+            drawerIcon: () => <Icon img={MedicineOrderIcon} />,
           }}
         />
         <Drawer.Screen
           name="testBooking"
-          component={TestBooking}
+          component={TestBookings}
           options={{
-            drawerIcon: () => <Icon img={testBookingsIcon} />,
+            drawerIcon: () => <Icon img={TestBookingIcon} />,
           }}
         />
         <Drawer.Screen
           name="privacyPolicy"
           component={PrivacyPolicy}
           options={{
-            drawerIcon: () => <Icon img={privacyPolicyIcon} />,
+            drawerIcon: () => <Icon img={PrivacyPolicyIcon} />,
           }}
         />
         <Drawer.Screen
           name="settings"
           component={Settings}
           options={{
-            drawerIcon: () => <Icon img={settingsIcon} />,
+            drawerIcon: () => <Icon img={SettingIcon} />,
           }}
         />
         <Drawer.Screen
           name="helpCenter"
           component={HelpCenter}
           options={{
-            drawerIcon: () => <Icon img={helpCenterIcon} />,
+            drawerIcon: () => <Icon img={HelpCenterIcon} />,
           }}
         />
 
@@ -134,7 +143,7 @@ const DrawerNavigation = () => {
           name="logout"
           component={Logout}
           options={{
-            drawerIcon: () => <Icon img={logoutIcon} />,
+            drawerIcon: () => <Icon img={LogoutIcon} />,
           }}
         />
       </Drawer.Navigator>
