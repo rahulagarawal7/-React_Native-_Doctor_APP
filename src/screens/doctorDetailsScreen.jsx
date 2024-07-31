@@ -58,6 +58,9 @@ const styles = StyleSheet.create({
   scrollViewContentContainerStyle: {
     gap: 30,
   },
+  serviceStyle: {
+    alignSelf: 'center',
+  },
 });
 
 export default DoctorDetailsScreen;

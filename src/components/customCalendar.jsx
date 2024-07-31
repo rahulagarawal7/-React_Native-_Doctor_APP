@@ -52,7 +52,7 @@ CustomCalendar.propTypes = {
 const styles = StyleSheet.create({
   calendarBox: {
     height: 280,
-    width: 335,
+    width: 345,
     alignSelf: 'center',
     borderRadius: 8,
   },

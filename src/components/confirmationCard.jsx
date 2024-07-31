@@ -38,10 +38,7 @@ const ConfirmationCard = ({drName, time, date}) => {
 ConfirmationCard.propTypes = {
   drName: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  time: PropTypes.shape({
-    time: PropTypes.string,
-    period: PropTypes.string,
-  }),
+  time: PropTypes.any,
 };
 
 const styles = StyleSheet.create({

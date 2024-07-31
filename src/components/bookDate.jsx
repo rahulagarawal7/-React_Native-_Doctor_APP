@@ -125,11 +125,7 @@ const BookDate = () => {
             {dataDr?.afternoonSlots}
           </Text>
           <FlatList
-            inverted={true}
-            contentContainerStyle={{
-              flexDirection: 'row',
-              flexWrap: 'wrap-reverse',
-            }}
+            numColumns={4}
             data={dataDr.afternoonTimes}
             renderItem={({item, index}) => {
               return (

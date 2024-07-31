@@ -10,10 +10,14 @@ const FindDoctor = () => {
     <ImageBackground
       source={backGroundImage}
       style={styles.backGroundImageStyle}>
-      <BackButton headingName={'Find Doctors'} />
+      <View style={styles.box}>
+        <BackButton headingName={'Find Doctors'} />
+      </View>
+
       <View style={styles.searchBarBox}>
         <SearchBar />
       </View>
+
       <View style={styles.findDoctorCard}>
         <FindDoctorCard />
       </View>
@@ -26,13 +30,16 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   searchBarBox: {
-    marginTop: 100,
+    marginTop: 50,
     alignItems: 'center',
   },
   findDoctorCard: {
     flex: 1,
-    marginTop: 40,
+    marginTop: 30,
     alignSelf: 'center',
+  },
+  box: {
+    height: 50,
   },
 });
 export default FindDoctor;
