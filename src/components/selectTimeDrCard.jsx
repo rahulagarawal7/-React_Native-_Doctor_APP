@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import color from '../commons/colors';
-import heartIcon from '../../src/assets/icons/heart.png';
+import {SolidHeartIcon} from '../assets/index';
 import PropTypes from 'prop-types';
 const SelectTimeDrCard = ({data}) => {
   return (
@@ -14,7 +14,7 @@ const SelectTimeDrCard = ({data}) => {
           <View style={styles.detailsBox}>
             <View style={styles.nameBox}>
               <Text style={styles.drNameTextStyle}>{data?.name}</Text>
-              <Image source={heartIcon} />
+              <Image source={SolidHeartIcon} />
             </View>
 
             <Text style={styles.drAddressStyle}>{data?.address}</Text>

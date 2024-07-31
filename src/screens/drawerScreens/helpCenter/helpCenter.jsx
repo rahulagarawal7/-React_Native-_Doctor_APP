@@ -9,9 +9,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import backGroundImage from '../../../assets/background/bg.png';
+import {BackgroundImage, ArrowIcon} from '../../../assets/index';
 import BackButton from '../../../components/backButton';
-import arrow from '../../../assets/icons/arrow.png';
 import color from '../../../commons/colors';
 import PropTypes from 'prop-types';
 const ListCard = ({name}) => {
@@ -19,7 +18,7 @@ const ListCard = ({name}) => {
     <TouchableOpacity>
       <View style={styles.innerBox}>
         <Text style={styles.textStyle}>{name}</Text>
-        <Image style={styles.arrowStyle} source={arrow} />
+        <Image style={styles.arrowStyle} source={ArrowIcon} />
       </View>
     </TouchableOpacity>
   );
@@ -31,7 +30,7 @@ const HelpCenter = () => {
   return (
     <ImageBackground
       style={styles.backGroundImageStyle}
-      source={backGroundImage}>
+      source={BackgroundImage}>
       <BackButton headingName="Help Center" />
 
       <TextInput

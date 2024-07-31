@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import searchImg from '../../src/assets/Logo/search.png';
+import {SearchLogo} from '../assets/index';
 import color from '../commons/colors';
 import DrCard from './drCard';
 
@@ -90,7 +90,7 @@ const SearchBar = () => {
   return (
     <>
       <View style={styles.barBox}>
-        <Image style={styles.searchImgStyle} source={searchImg} />
+        <Image style={styles.searchImgStyle} source={SearchLogo} />
         <TextInput
           onBlur={() => setSearchOptions([])}
           clearButtonMode="always"

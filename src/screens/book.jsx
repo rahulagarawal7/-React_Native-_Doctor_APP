@@ -1,8 +1,7 @@
 import React from 'react';
 import {ImageBackground, ScrollView, StyleSheet, View} from 'react-native';
-import backGroundImage from '../assets/background/bg.png';
+import {BackgroundImage, MedicalOrderLogo} from '../assets/index';
 import BackButton from '../components/backButton';
-import logo from '../../src/assets/Logo/medicalOrder.png';
 import AddCard from '../components/drawerScreens/addCard';
 import PropTypes from 'prop-types';
 
@@ -13,7 +12,7 @@ const Book = ({navigation}) => {
   return (
     <ImageBackground
       style={styles.backGroundImageStyle}
-      source={backGroundImage}>
+      source={BackgroundImage}>
       <BackButton headingName="Book Doctors" />
       <View style={styles.box}>
         <ScrollView>
@@ -23,7 +22,7 @@ const Book = ({navigation}) => {
               headingContent={
                 'Not booked any doctor yet book now  we have best doctors !'
               }
-              image={logo}
+              image={MedicalOrderLogo}
               headingName={'No booking found '}
               handlerOnPress={handleSubmit}
             />

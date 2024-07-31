@@ -1,6 +1,6 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, View} from 'react-native';
-import backGroundImage from '/Users/dr.mac/Desktop/DoctorAPP/src/assets/background/bg.png';
+import {BackgroundImage} from '../../../assets/index';
 import BackButton from '../../../components/backButton';
 import FindDoctorCard from '../../../components/findDoctorCard';
 
@@ -8,7 +8,7 @@ const MyDoctorScreen = () => {
   return (
     <ImageBackground
       style={styles.backGroundImageStyle}
-      source={backGroundImage}>
+      source={BackgroundImage}>
       <View style={styles.box}>
         <BackButton headingName="My Doctors" />
       </View>

@@ -1,9 +1,8 @@
 import React from 'react';
 import {ImageBackground, StyleSheet} from 'react-native';
-import backGroundImage from '../../../assets/background/bg.png';
+import {BackgroundImage, MedicalRecordsLogo} from '../../../assets/index';
 import BackButton from '../../../components/backButton';
 import AddCard from '../../../components/drawerScreens/addCard';
-import medicalLogo from '../../../assets/Logo/medicalRecords.png';
 import PropTypes from 'prop-types';
 const MedicalRecords = ({navigation}) => {
   const handlerOnPress = () => {
@@ -13,10 +12,10 @@ const MedicalRecords = ({navigation}) => {
   return (
     <ImageBackground
       style={styles.backGroundImageStyle}
-      source={backGroundImage}>
+      source={BackgroundImage}>
       <BackButton headingName="Medical Records" />
       <AddCard
-        image={medicalLogo}
+        image={MedicalRecordsLogo}
         headingName={'Add a medical record.'}
         headingContent={
           'A detailed health history helps a doctor diagnose you better.'

@@ -9,11 +9,13 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import color from '../../../commons/colors';
-import penImg from '../../../assets/Logo/pen.png';
-import invoiceIcon from '../../../assets/icons/invoice.png';
-import prescriptionIcon from '../../../assets/icons/Prescription.png';
-import reportIcon from '../../../assets/icons/Report.png';
 import CommonButton from '../../commonButton';
+import {
+  ReportIcon,
+  PrescriptionIcon,
+  InvoiceIcon,
+  PenLogo,
+} from '../../../assets/index';
 
 const UploadRecord = ({recordForName}) => {
   const [date, setDate] = useState('');
@@ -58,14 +60,14 @@ const UploadRecord = ({recordForName}) => {
               onPress={() => {
                 setIsWrite(!isWrite);
               }}>
-              <Image style={styles.penImgStyle} source={penImg} />
+              <Image style={styles.penImgStyle} source={PenLogo} />
             </TouchableOpacity>
           ) : (
             <TouchableOpacity
               onPress={() => {
                 setIsWrite(!isWrite);
               }}>
-              <Image style={styles.penImgStyleOnSelected} source={penImg} />
+              <Image style={styles.penImgStyleOnSelected} source={PenLogo} />
             </TouchableOpacity>
           )}
         </View>
@@ -94,19 +96,19 @@ const UploadRecord = ({recordForName}) => {
         <Text style={styles.headingTextStyle}>Types of Records</Text>
         <View style={styles.iconBox}>
           <IconCard
-            img={invoiceIcon}
+            img={InvoiceIcon}
             id={'invoiceIcon'}
             selected={selected}
             setSelected={setSelected}
           />
           <IconCard
-            img={prescriptionIcon}
+            img={PrescriptionIcon}
             id={'prescriptionIcon'}
             selected={selected}
             setSelected={setSelected}
           />
           <IconCard
-            img={reportIcon}
+            img={ReportIcon}
             id={'reportIcon'}
             selected={selected}
             setSelected={setSelected}

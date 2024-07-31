@@ -10,8 +10,7 @@ import {
 } from 'react-native';
 import BackButton from '../components/backButton';
 import color from '../commons/colors';
-import cameraLogo from '../assets/Logo/camera.png';
-import penImg from '../assets/Logo/pen.png';
+import {PenLogo, CameraLogo} from '../assets/index';
 import CommonButton from '../components/commonButton';
 import PropTypes from 'prop-types';
 const NameCard = ({data, headingName, writeAble, placeholder}) => {
@@ -37,14 +36,14 @@ const NameCard = ({data, headingName, writeAble, placeholder}) => {
               onPress={() => {
                 setIsWrite(!isWrite);
               }}>
-              <Image style={styles.penImgStyle} source={penImg} />
+              <Image style={styles.penImgStyle} source={PenLogo} />
             </TouchableOpacity>
           ) : (
             <TouchableOpacity
               onPress={() => {
                 setIsWrite(!isWrite);
               }}>
-              <Image style={styles.penImgStyleOnSelected} source={penImg} />
+              <Image style={styles.penImgStyleOnSelected} source={PenLogo} />
             </TouchableOpacity>
           ))}
       </View>
@@ -78,7 +77,7 @@ const UserProfile = ({route, navigation}) => {
         <View style={styles.userImageBox}>
           <Image style={styles.userImgStyle} source={userImg} />
           <TouchableOpacity style={styles.cameraBox}>
-            <Image style={styles.cameraLogoImg} source={cameraLogo} />
+            <Image style={styles.cameraLogoImg} source={CameraLogo} />
           </TouchableOpacity>
         </View>
       </View>

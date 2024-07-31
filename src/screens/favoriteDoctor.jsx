@@ -1,14 +1,14 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, View} from 'react-native';
 import BackButton from '../components/backButton';
-import backGroundImage from '../assets/background/bg.png';
+import {BackgroundImage} from '../assets/index';
 import FindDoctorCard from '../components/findDoctorCard';
 
 const FavoriteDoctor = () => {
   return (
     <ImageBackground
       style={styles.backGroundImageStyle}
-      source={backGroundImage}>
+      source={BackgroundImage}>
       <View style={styles.box}>
         <BackButton headingName="Favorite Doctors" />
       </View>

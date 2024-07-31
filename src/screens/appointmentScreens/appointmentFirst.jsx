@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import DoctorDetailsCard from '../../components/doctorDetailsCard';
 import PatientProfile from '../../components/appointmentCards/patientProfile';
 import CommonButton from '../../components/commonButton';
-import backGroundImage from '../../assets/background/bg.png';
+import {BackgroundImage} from '../../assets/index';
 import PatientDetailsCard from '../../components/appointmentCards/patientDetailsCard';
 import BackButton from '../../components/backButton';
 
@@ -16,7 +16,7 @@ const AppointmentFirst = ({route, navigation}) => {
   };
   return (
     <View style={styles.container}>
-      <ImageBackground source={backGroundImage}>
+      <ImageBackground source={BackgroundImage}>
         <View style={styles.backButtonStyle}>
           <BackButton headingName="Appointment" />
         </View>

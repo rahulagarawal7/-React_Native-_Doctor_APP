@@ -3,12 +3,11 @@ import {ImageBackground, StyleSheet, View} from 'react-native';
 import BackButton from '../../components/backButton';
 import SearchBar from '../../components/searchBar';
 import FindDoctorCard from '../../components/findDoctorCard';
-import backGroundImage from '../../assets/background/bg.png';
-
+import {BackgroundImage} from '../../assets/index';
 const FindDoctor = () => {
   return (
     <ImageBackground
-      source={backGroundImage}
+      source={BackgroundImage}
       style={styles.backGroundImageStyle}>
       <View style={styles.box}>
         <BackButton headingName={'Find Doctors'} />

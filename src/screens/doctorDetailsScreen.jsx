@@ -5,13 +5,12 @@ import DoctorDetailsCard from '../components/doctorDetailsCard';
 import OngoingPatient from '../components/ongoingPatient';
 import Service from '../components/service';
 import PropTypes from 'prop-types';
-import backGroundImage from '../assets/background/bg.png';
-
+import {BackgroundImage} from '../assets/index';
 const DoctorDetailsScreen = ({route}) => {
   const {data} = route.params;
   return (
     <View style={styles.container}>
-      <ImageBackground source={backGroundImage}>
+      <ImageBackground source={BackgroundImage}>
         <View style={styles.backButtonStyles}>
           <BackButton headingName="Doctor Details" />
         </View>

@@ -1,21 +1,22 @@
 import React from 'react';
 import {ImageBackground, StyleSheet} from 'react-native';
-import backGroundImage from '/Users/dr.mac/Desktop/DoctorAPP/src/assets/background/bg.png';
+import {BackgroundImage, MedicalOrderLogo} from '../../../assets/index';
 import BackButton from '../../../components/backButton';
-import medicalRecordLogo from '../../../assets/Logo/medicalOrder.png';
 import AddCard from '../../../components/drawerScreens/addCard';
 
 const MedicineOrder = () => {
+  const handleSubmit = () => {};
   return (
     <ImageBackground
       style={styles.backGroundImageStyle}
-      source={backGroundImage}>
+      source={BackgroundImage}>
       <BackButton headingName="Medicine Order" />
       <AddCard
-        image={medicalRecordLogo}
+        image={MedicalOrderLogo}
         btnName={'Order medicines'}
         headingContent={'Place your first order now.'}
         headingName={'No orders placed yet'}
+        handlerOnPress={handleSubmit}
       />
     </ImageBackground>
   );

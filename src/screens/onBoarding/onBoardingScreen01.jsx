@@ -8,9 +8,11 @@ import {
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import topImg from '../../assets/background/Ellipse153.png';
-import drImage from '../../assets/images/Ellipse154.png';
-import bg from '../../assets/background/bg.png';
+import {
+  BackgroundImage,
+  DoctorImage01,
+  TopRightCircleImage,
+} from '../../assets/index';
 import color from '../../commons/colors';
 import CommonButton from '../../components/commonButton';
 import HeadingText from '../../components/login/headingText';
@@ -20,11 +22,11 @@ const OnBoardingScreen01 = ({navigation}) => {
   };
 
   return (
-    <ImageBackground source={bg}>
+    <ImageBackground source={BackgroundImage}>
       <ScrollView>
-        <Image style={styles.firstImage} source={topImg} />
+        <Image style={styles.firstImage} source={TopRightCircleImage} />
         <View style={styles.drImgBox}>
-          <Image style={styles.drImg} source={drImage} />
+          <Image style={styles.drImg} source={DoctorImage01} />
         </View>
         <View style={styles.textBox}>
           <HeadingText

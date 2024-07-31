@@ -8,21 +8,23 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import backGroundImage from '../../../assets/background/bg.png';
+import {
+  BackgroundImage,
+  ArrowIcon,
+  AboutUsLogo,
+  NotificationLogo,
+  StatisticsLogo,
+  ChangePasswordLogo,
+} from '../../../assets/index';
 import BackButton from '../../../components/backButton';
 import color from '../../../commons/colors';
-import changePasswordLogo from '../../../assets/Logo/changePassword.png';
-import notificationLogo from '../../../assets/Logo/notification.png';
-import statisticsLogo from '../../../assets/Logo/statistics.png';
-import aboutUsLogo from '../../../assets/Logo/aboutUs.png';
-import arrow from '../../../assets/icons/arrow.png';
 import PropTypes from 'prop-types';
 const ListThree = ({nameOne, nameTwo}) => {
   return (
     <TouchableOpacity style={styles.innerBoxThree}>
       <Text style={styles.textName}>{nameOne}</Text>
       <Text style={styles.textNameTwo}>{nameTwo}</Text>
-      <Image style={styles.arrowStyle} source={arrow} />
+      <Image style={styles.arrowStyle} source={ArrowIcon} />
     </TouchableOpacity>
   );
 };
@@ -60,7 +62,7 @@ const ListOne = ({img, name}) => {
     <TouchableOpacity style={styles.innerBoxOne}>
       <Image style={styles.imgStyle} source={img} />
       <Text style={styles.textName}>{name}</Text>
-      <Image style={styles.arrowStyle} source={arrow} />
+      <Image style={styles.arrowStyle} source={ArrowIcon} />
     </TouchableOpacity>
   );
 };
@@ -72,16 +74,16 @@ const Settings = () => {
   return (
     <ImageBackground
       style={styles.backGroundImageStyle}
-      source={backGroundImage}>
+      source={BackgroundImage}>
       <BackButton headingName="Settings" />
       <View style={styles.box}>
         <ScrollView>
           <Text style={styles.headingNameStyle}>Account settings</Text>
           <View style={styles.accountSettingsStyle}>
-            <ListOne name={'Change Password'} img={changePasswordLogo} />
-            <ListOne name={'Notification'} img={notificationLogo} />
-            <ListOne name={'Statistics'} img={statisticsLogo} />
-            <ListOne name={'About Us'} img={aboutUsLogo} />
+            <ListOne name={'Change Password'} img={ChangePasswordLogo} />
+            <ListOne name={'Notification'} img={NotificationLogo} />
+            <ListOne name={'Statistics'} img={StatisticsLogo} />
+            <ListOne name={'About Us'} img={AboutUsLogo} />
           </View>
           <Text style={styles.secondHeading}>More options</Text>
           <ListTwo name={'Text messages'} />

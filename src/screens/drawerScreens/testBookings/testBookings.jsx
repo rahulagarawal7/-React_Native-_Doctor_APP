@@ -1,20 +1,23 @@
 import React from 'react';
 import {ImageBackground, StyleSheet} from 'react-native';
-import backGroundImage from '/Users/dr.mac/Desktop/DoctorAPP/src/assets/background/bg.png';
+import {BackgroundImage, PatientLogo} from '../../../assets/index';
 import BackButton from '../../../components/backButton';
 import AddCard from '../../../components/drawerScreens/addCard';
-import img from '../../../assets/Logo/patient.png';
+
 const TestBooking = () => {
+  const handlerOnPress = () => {};
+
   return (
     <ImageBackground
       style={styles.backGroundImageStyle}
-      source={backGroundImage}>
+      source={BackgroundImage}>
       <BackButton headingName="Test Booking" />
       <AddCard
-        image={img}
+        image={PatientLogo}
         headingContent={'add your test booking to know about your health '}
         btnName={'add test booking'}
         headingName={'No test booking found'}
+        handlerOnPress={handlerOnPress}
       />
     </ImageBackground>
   );

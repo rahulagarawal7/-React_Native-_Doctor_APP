@@ -1,16 +1,15 @@
 import React from 'react';
 import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
-import img from '../../../assets/images/boy.png';
-import addImg from '../../../assets/Logo/addImages.png';
+import {AddImageLogo, BoyImage} from '../../../assets/index';
 
 const AddImageCard = () => {
   return (
     <View style={styles.box}>
       <TouchableOpacity style={styles.card}>
-        <Image source={img} />
+        <Image source={BoyImage} />
       </TouchableOpacity>
       <TouchableOpacity style={styles.card}>
-        <Image source={addImg} />
+        <Image source={AddImageLogo} />
       </TouchableOpacity>
     </View>
   );

@@ -1,10 +1,8 @@
 import React, {useState} from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import color from '../commons/colors';
-import heartIcon from '../../src/assets/icons/heart.png';
-import circleIcon from '../../src/assets/icons/circle.png';
+import {GreenCircle, HollowHeartIcon, SolidHeartIcon} from '../assets/index';
 import {useNavigation} from '@react-navigation/native';
-import like from '../assets/icons/like.png';
 import PropTypes from 'prop-types';
 
 const DrCard = ({item}) => {
@@ -25,20 +23,20 @@ const DrCard = ({item}) => {
               <Text style={styles.nameStyle}>{item?.name}</Text>
               {isLiked ? (
                 <TouchableOpacity onPress={() => likeHandlePress()}>
-                  <Image source={heartIcon} />
+                  <Image source={SolidHeartIcon} />
                 </TouchableOpacity>
               ) : (
                 <TouchableOpacity onPress={() => likeHandlePress()}>
-                  <Image source={like} />
+                  <Image source={HollowHeartIcon} />
                 </TouchableOpacity>
               )}
             </View>
             <Text style={styles.typeStyle}>{item?.type}</Text>
             <Text style={styles.expStyle}>{item?.exp}</Text>
             <View style={styles.countBox}>
-              <Image source={circleIcon} />
+              <Image source={GreenCircle} />
               <Text style={styles.countBoxTextStyle}>{item.percent}</Text>
-              <Image style={styles.circleImgStyle} source={circleIcon} />
+              <Image style={styles.circleImgStyle} source={GreenCircle} />
               <Text style={styles.countBoxTextStyle}>{item?.stories}</Text>
             </View>
           </View>

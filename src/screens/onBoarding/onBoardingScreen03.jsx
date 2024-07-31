@@ -8,22 +8,24 @@ import {
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import topImg from '../../assets/background/Ellipse153.png';
-import drImage from '../../assets/images/Ellipse154(2).png';
 import color from '../../commons/colors';
 import CommonButton from '../../components/commonButton';
 import HeadingText from '../../components/login/headingText';
-import bg from '../../assets/background/bg.png';
+import {
+  BackgroundImage,
+  DoctorImage03,
+  TopRightCircleImage,
+} from '../../assets/index';
 const OnBoardingScreen03 = ({navigation}) => {
   const handleSubmit = () => {
     navigation.navigate('signUpScreen');
   };
   return (
-    <ImageBackground source={bg}>
+    <ImageBackground source={BackgroundImage}>
       <ScrollView>
-        <Image style={styles.firstImage} source={topImg} />
+        <Image style={styles.firstImage} source={TopRightCircleImage} />
         <View style={styles.drImgBox}>
-          <Image style={styles.drImg} source={drImage} />
+          <Image style={styles.drImg} source={DoctorImage03} />
         </View>
         <View style={styles.textBox}>
           <HeadingText

@@ -1,16 +1,9 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import homeIcon from '../../src/assets/icons/homeIcon.png';
-import bookIcon from '../../src/assets/icons/bookIcon.png';
-import favIcon from '../../src/assets/icons/favoriteIcon.png';
-import chatIcon from '../../src/assets/icons/chatIcon.png';
+import {BookIcon, ChatIcon, HomeIcon, HeartIcon} from '../assets/index';
 import {Image, StyleSheet, View} from 'react-native';
-import Home from '../screens/home';
 import color from '../commons/colors';
-import FavoriteDoctor from '../screens/favoriteDoctor';
-import Book from '../screens/book';
-import ChatScreen from '../screens/chatScreen';
-
+import {Home, ChatScreen, Book, FavoriteDoctors} from '../screens/index';
 const Tab = createBottomTabNavigator();
 
 const BottomTab = () => {
@@ -28,7 +21,7 @@ const BottomTab = () => {
             return (
               <View style={focused && styles.circle}>
                 <Image
-                  source={homeIcon}
+                  source={HomeIcon}
                   style={focused && styles.focusedStyle}
                 />
               </View>
@@ -40,13 +33,13 @@ const BottomTab = () => {
       />
       <Tab.Screen
         name="favoriteDoctor"
-        component={FavoriteDoctor}
+        component={FavoriteDoctors}
         options={{
           tabBarIcon: ({focused}) => {
             return (
               <View style={focused && styles.circle}>
                 <Image
-                  source={favIcon}
+                  source={HeartIcon}
                   style={focused && styles.focusedStyle}
                 />
               </View>
@@ -64,7 +57,7 @@ const BottomTab = () => {
             return (
               <View style={focused && styles.circle}>
                 <Image
-                  source={bookIcon}
+                  source={BookIcon}
                   style={focused && styles.focusedStyle}
                 />
               </View>
@@ -82,7 +75,7 @@ const BottomTab = () => {
             return (
               <View style={focused && styles.circle}>
                 <Image
-                  source={chatIcon}
+                  source={ChatIcon}
                   style={focused && styles.focusedStyle}
                 />
               </View>
