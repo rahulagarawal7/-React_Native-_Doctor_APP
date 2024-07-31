@@ -61,10 +61,7 @@ const AvailableTime = ({setTime, timeValue}) => {
 
 AvailableTime.propTypes = {
   setTime: PropTypes.func,
-  timeValue: PropTypes.shape({
-    time: PropTypes.any,
-    period: PropTypes.any,
-  }),
+  timeValue: PropTypes.any,
 };
 const styles = StyleSheet.create({
   HeadingTextStyle: {

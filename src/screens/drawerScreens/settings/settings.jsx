@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   },
   headingNameStyle: {
     height: 40,
-    width: 320,
+    width: 300,
     alignSelf: 'center',
     fontSize: 18,
     fontWeight: '500',

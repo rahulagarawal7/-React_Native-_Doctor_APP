@@ -56,10 +56,11 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: color.commonTextColor,
     width: 280,
-    padding: 10,
+    padding: 0,
+    marginLeft: 0,
     borderColor: color.containTextColor,
     color: color.containTextColor,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '300',
   },
   imageStyle: {

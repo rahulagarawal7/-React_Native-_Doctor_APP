@@ -24,7 +24,11 @@ const NameCard = ({data, headingName, writeAble, placeholder}) => {
           {isWrite ? (
             <Text style={styles.nameTextStyle}>{data}</Text>
           ) : (
-            <TextInput placeholder={placeholder} style={styles.nameTextStyle} />
+            <TextInput
+              placeholder={placeholder}
+              placeholderTextColor={color.containTextColor}
+              style={styles.nameTextStyle}
+            />
           )}
         </View>
         {writeAble &&
@@ -87,13 +91,13 @@ const UserProfile = ({route, navigation}) => {
           headingName={'Contact Number'}
           data={'788999988'}
           writeAble={true}
-          placeholder={'contact number'}
+          placeholder={'contact number...'}
         />
         <NameCard
           headingName={'Date of Birth'}
           data={'DD MM YYYY'}
           writeAble={true}
-          placeholder={'DD MM YYYY'}
+          placeholder={'DD MM YYYY..'}
         />
         <NameCard
           headingName={'Location'}
@@ -116,13 +120,12 @@ UserProfile.propTypes = {
 const styles = StyleSheet.create({
   container: {
     height: 357,
-    width: 375,
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
     backgroundColor: color.buttonColor,
   },
   profileTextStyle: {
-    width: 230,
+    width: 280,
     color: color.commonTextColor,
     fontSize: 18,
     fontWeight: '700',
@@ -183,7 +186,7 @@ const styles = StyleSheet.create({
   },
   containerOne: {
     marginTop: 15,
-    height: 70,
+    height: 80,
     alignSelf: 'center',
     width: 336,
     backgroundColor: color.commonTextColor,
@@ -206,7 +209,7 @@ const styles = StyleSheet.create({
     color: color.buttonColor,
   },
   nameTextStyle: {
-    height: 21,
+    height: 41,
     width: 141,
     fontSize: 18,
     fontWeight: '500',
