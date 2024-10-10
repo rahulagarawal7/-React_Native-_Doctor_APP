@@ -9,8 +9,7 @@ import {
   View,
 } from 'react-native';
 import color from '../commons/colors';
-import heartIcon from '../assets/icons/heart.png';
-import like from '../assets/icons/like.png';
+import {SolidHeartIcon, HollowHeartIcon} from '../assets/index';
 import {useNavigation} from '@react-navigation/native';
 
 const Card = ({item}) => {
@@ -27,11 +26,11 @@ const Card = ({item}) => {
         <View style={styles.heartIconStyle}>
           {isLiked ? (
             <TouchableOpacity onPress={() => handleLikePress()}>
-              <Image source={heartIcon} />
+              <Image source={SolidHeartIcon} />
             </TouchableOpacity>
           ) : (
             <TouchableOpacity onPress={() => handleLikePress()}>
-              <Image source={like} />
+              <Image source={HollowHeartIcon} />
             </TouchableOpacity>
           )}
         </View>

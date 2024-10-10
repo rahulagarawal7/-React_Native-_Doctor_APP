@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import color from '../commons/colors';
-import like from '../../src/assets/Logo/like.png';
+import {ThumbLogo} from '../assets/index';
 import CommonButton from './commonButton';
 import {useNavigation} from '@react-navigation/native';
 import PropTypes from 'prop-types';
@@ -15,7 +15,7 @@ const ConfirmationCard = ({drName, time, date}) => {
   return (
     <View style={styles.card}>
       <View style={styles.innerCard}>
-        <Image style={styles.likeImg} source={like} />
+        <Image style={styles.likeImg} source={ThumbLogo} />
         <Text style={styles.headingTextStyle}>Thank You !</Text>
         <Text style={styles.lowerHeadingTextStyle}>
           Your Appointment Successful
@@ -38,10 +38,7 @@ const ConfirmationCard = ({drName, time, date}) => {
 ConfirmationCard.propTypes = {
   drName: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  time: PropTypes.shape({
-    time: PropTypes.string,
-    period: PropTypes.string,
-  }),
+  time: PropTypes.any,
 };
 
 const styles = StyleSheet.create({

@@ -1,20 +1,21 @@
 import React from 'react';
 import {ImageBackground, StyleSheet} from 'react-native';
-import backGroundImage from '/Users/dr.mac/Desktop/DoctorAPP/src/assets/background/bg.png';
+import {BackgroundImage, MedicalRecordsLogo} from '../../../assets/index';
 import BackButton from '../../../components/backButton';
 import AddCard from '../../../components/drawerScreens/addCard';
-import medicalLogo from '../../../assets/Logo/medicalRecords.png';
-
-const MedicalRecords = () => {
-  const handlerOnPress = () => {};
+import PropTypes from 'prop-types';
+const MedicalRecords = ({navigation}) => {
+  const handlerOnPress = () => {
+    navigation.navigate('addRecords');
+  };
 
   return (
     <ImageBackground
       style={styles.backGroundImageStyle}
-      source={backGroundImage}>
+      source={BackgroundImage}>
       <BackButton headingName="Medical Records" />
       <AddCard
-        image={medicalLogo}
+        image={MedicalRecordsLogo}
         headingName={'Add a medical record.'}
         headingContent={
           'A detailed health history helps a doctor diagnose you better.'
@@ -24,6 +25,11 @@ const MedicalRecords = () => {
       />
     </ImageBackground>
   );
+};
+
+MedicalRecords.propTypes = {
+  navigation: PropTypes.any,
+  navigate: PropTypes.any,
 };
 const styles = StyleSheet.create({
   backGroundImageStyle: {

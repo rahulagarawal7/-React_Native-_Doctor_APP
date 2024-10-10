@@ -7,8 +7,7 @@ import {
   View,
 } from 'react-native';
 import color from '../../commons/colors';
-import hidePasswordImg from '../../assets/icons/hidePassword.png';
-import showPasswordImg from '../../assets/icons/showPassword.png';
+import {HidePasswordIcon, ShowPasswordIcon} from '../../assets/index';
 import PropTypes from 'prop-types';
 
 const PasswordTextField = ({placeholder}) => {
@@ -23,14 +22,14 @@ const PasswordTextField = ({placeholder}) => {
       />
       {showImage ? (
         <TouchableOpacity onPress={() => setShowImage(!showImage)}>
-          <Image style={styles.imageStyle} source={hidePasswordImg} />
+          <Image style={styles.imageStyle} source={HidePasswordIcon} />
         </TouchableOpacity>
       ) : (
         <TouchableOpacity
           onPress={() => {
             setShowImage(!showImage);
           }}>
-          <Image style={styles.imageStyle} source={showPasswordImg} />
+          <Image style={styles.imageStyle} source={ShowPasswordIcon} />
         </TouchableOpacity>
       )}
     </View>
@@ -56,10 +55,11 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: color.commonTextColor,
     width: 280,
-    padding: 10,
+    padding: 0,
+    marginLeft: 0,
     borderColor: color.containTextColor,
     color: color.containTextColor,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '300',
   },
   imageStyle: {

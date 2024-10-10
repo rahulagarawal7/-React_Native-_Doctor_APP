@@ -15,7 +15,7 @@ const CommonButton = ({btnText, handleSubmit}) => {
 
 CommonButton.propTypes = {
   btnText: PropTypes.string.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func,
 };
 
 const styles = StyleSheet.create({

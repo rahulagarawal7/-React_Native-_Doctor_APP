@@ -2,14 +2,14 @@ import React from 'react';
 import {ImageBackground, StyleSheet, View} from 'react-native';
 import BackButton from '../components/backButton';
 import PropTypes from 'prop-types';
-import backGroundImage from '../assets/background/bg.png';
+import {BackgroundImage} from '../assets/index';
 import SeeByType from '../components/seeByType';
 
 const DoctorListType = ({route}) => {
   const {type} = route.params;
   return (
     <ImageBackground
-      source={backGroundImage}
+      source={BackgroundImage}
       style={styles.backGroundImageStyle}>
       <BackButton headingName={type} />
       <View style={styles.seeAllCardStyle}>

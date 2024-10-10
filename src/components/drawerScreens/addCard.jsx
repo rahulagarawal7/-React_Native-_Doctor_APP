@@ -22,7 +22,7 @@ const AddCard = ({
   );
 };
 AddCard.propTypes = {
-  image: PropTypes.string,
+  image: PropTypes.any,
   headingName: PropTypes.string,
   headingContent: PropTypes.string,
   btnName: PropTypes.string,

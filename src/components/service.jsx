@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import mapImg from '../assets/images/map.png';
+import {MapImage} from '../assets/index';
 import color from '../commons/colors';
 const Service = () => {
   return (

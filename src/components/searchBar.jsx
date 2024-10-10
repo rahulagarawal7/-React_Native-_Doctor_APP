@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Image,
   StyleSheet,
@@ -6,28 +6,114 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import searchImg from '../../src/assets/Logo/search.png';
-import crossImg from '../../src/assets/Logo/cross.png';
+import {SearchLogo} from '../assets/index';
 import color from '../commons/colors';
-import {useNavigation} from '@react-navigation/native';
+import DrCard from './drCard';
+
+const Images = [
+  {
+    id: 1,
+    url: require('../../src/assets/images/popularDoctors2.png'),
+    name: 'Dr.Filler',
+    type: 'Tooth Dentist',
+    exp: '7 Years experience',
+    available: 'Next Available',
+    percent: '87%',
+    stories: '69 Patient Stories',
+    time: '10:00 AM tomorrow',
+    address: 'Upasana Dental Clinic, salt lake',
+    rating: require('../../src/assets/icons/star.png'),
+  },
+  {
+    id: 2,
+    url: require('../../src/assets/images/popularDoctors1.png'),
+    name: 'Dr.Click',
+    type: 'Tooth Dentist',
+    exp: '7 Years experience',
+    available: 'Next Available',
+    percent: '87%',
+    stories: '69 Patient Stories',
+    time: '10:00 AM tomorrow',
+    address: 'Upasana Dental Clinic, salt lake',
+    rating: require('../../src/assets/icons/star.png'),
+  },
+  {
+    id: 3,
+    url: require('../../src/assets/images/popularDoctors2.png'),
+    name: 'Dr.Strain',
+    type: 'Tooth Dentist',
+    exp: '7 Years experience',
+    available: 'Next Available',
+    percent: '87%',
+    stories: '69 Patient Stories',
+    time: '10:00 AM tomorrow',
+    address: 'Upasana Dental Clinic, salt lake',
+    rating: require('../../src/assets/icons/star.png'),
+  },
+  {
+    id: 4,
+    url: require('../../src/assets/images/popularDoctors1.png'),
+    name: 'Dr.Blessing',
+    type: 'Tooth Dentist',
+    exp: '7 Years experience',
+    available: 'Next Available',
+    percent: '87%',
+    stories: '69 Patient Stories',
+    time: '10:00 AM tomorrow',
+    address: 'Upasana Dental Clinic, salt lake',
+    rating: require('../../src/assets/icons/star.png'),
+  },
+];
 
 const SearchBar = () => {
-  const navigation = useNavigation();
+  const [search, setSearch] = useState('');
+  const [searchOptions, setSearchOptions] = useState([]);
+
+  const filterSearch = Images => {
+    const val = Images.filter(item =>
+      item.name.toLowerCase().includes(search.toLocaleLowerCase()),
+    );
+    if (search.length > 0) setSearchOptions(val);
+  };
+
+  useEffect(() => {
+    filterSearch(Images);
+  }, [search]);
+
+  const handleSearch = value => {
+    if (value.length === 0) {
+      setSearchOptions([]);
+    }
+    setSearch(value);
+  };
+
   return (
-    <View style={styles.barBox}>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate('findDoctor');
-        }}>
-        <Image style={styles.searchImgStyle} source={searchImg} />
-      </TouchableOpacity>
-      <TextInput
-        placeholder="Search..."
-        keyboardType="text"
-        style={styles.inputTextStyle}
-      />
-      <Image style={styles.crossImgStyle} source={crossImg} />
-    </View>
+    <>
+      <View style={styles.barBox}>
+        <Image style={styles.searchImgStyle} source={SearchLogo} />
+        <TextInput
+          onBlur={() => setSearchOptions([])}
+          clearButtonMode="always"
+          value={search}
+          onChangeText={e => handleSearch(e)}
+          placeholder="Search..."
+          placeholderTextColor={color.containTextColor}
+          keyboardType="text"
+          style={styles.inputTextStyle}
+        />
+      </View>
+      {searchOptions.length > 1 && (
+        <>
+          {searchOptions.map(item => {
+            return (
+              <View key={item.id} style={styles.cardBox}>
+                <DrCard item={item} />
+              </View>
+            );
+          })}
+        </>
+      )}
+    </>
   );
 };
 const styles = StyleSheet.create({
@@ -35,7 +121,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: -30,
     height: 54,
-    width: 335,
+    width: 355,
     borderRadius: 6,
     backgroundColor: color.commonTextColor,
     flex: 1,
@@ -48,14 +134,15 @@ const styles = StyleSheet.create({
     width: 13,
   },
   inputTextStyle: {
-    height: 18,
+    height: 40,
     width: 250,
-    fontSize: 18,
-    fontWeight: '400',
+    fontSize: 16,
+    fontWeight: '300',
+    color: color.containTextColor,
   },
-  crossImgStyle: {
-    height: 12,
-    width: 12,
+  cardBox: {
+    backgroundColor: 'white',
+    marginTop: 15,
   },
 });
 export default SearchBar;
